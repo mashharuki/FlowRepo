@@ -357,7 +357,10 @@ Hash Algorithm           SHA3_256
 Signature Algorithm      ECDSA_P256
 ```
 
+### Blocto Wallet Tutorial
 
+1. `cd my-app`
+2. `npm i @onflow/fcl styled-components`
 
 ### 参考文献
 1. [Developer Portal](https://developers.flow.com/)
@@ -376,3 +379,10 @@ Signature Algorithm      ECDSA_P256
 14. [Install the Flow CLI](https://developers.flow.com/tools/flow-cli/install)
 15. [DApps のユーザー認証に web3.eth.personal.sign を使おう！](https://tech.drecom.co.jp/dapps-use-web3-eth-personal-sign/)
 16. [FCL Development Wallet](https://github.com/onflow/fcl-dev-wallet)
+17. [Blocto Wallet zendesk](https://portto.zendesk.com/hc/en-us)
+18. [How Blocto as a cross-chain smart contract wallet solve user & developer problems](https://portto.com/blocto-crypto-blog/ecosystem/cross-chain-smart-contract-wallet-solve-user-amp-developer-problems)
+19. [Blocto Wallet Docs](https://docs.blocto.app/blocto-app/web3-provider/batch-transaction)
+20. [Blocto for Developers](https://developers-testnet.blocto.app/)
+21. [Blocto SDK JavaScript](https://docs.blocto.app/blocto-sdk/javascript-sdk/evm-sdk)
+22. [Crypto Candy](https://github.com/amitkothari/crypto-candy)
+23. [Blocto SDK in Flow dApps](https://docs.blocto.app/blocto-sdk/javascript-sdk/flow)
