@@ -1,5 +1,12 @@
-import logo from './assets/img/logo.svg';
 import './css/App.css';
+import styled from 'styled-components';
+import GetLatestBlock from './components/GetLatestBlock';
+
+const Wrapper = styled.div`
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+`;
+
 
 /**
  * App component
@@ -7,22 +14,9 @@ import './css/App.css';
 function App() {
   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <GetLatestBlock />
+    </Wrapper>
   );
 }
 
