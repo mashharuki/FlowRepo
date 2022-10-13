@@ -230,7 +230,7 @@ Contracts (hidden, use --include contracts)
 
 `flow transactions send <code filename> [<argument> <argument>...] [flags]`  
 
-`flow transactions send ./tx/Transaction1.cdc -n testnet --signer  mashharuki`
+`flow transactions send ./tx/Transaction1.cdc -n testnet --signer mashharuki`
 
 ```zsh
 Transaction ID: 53393a4e46ee0f556863b40b08f7246517b18dc4508b9216f764415592091ab4

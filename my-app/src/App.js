@@ -2,6 +2,7 @@ import './css/App.css';
 import styled from 'styled-components';
 import GetLatestBlock from './components/GetLatestBlock';
 import CurrentUser from './components/Authenticate';
+import SendTransaction from './components/SendTransaction';
 
 const Wrapper = styled.div`
     font-size: 13px;
@@ -18,6 +19,7 @@ function App() {
     <Wrapper>
       <GetLatestBlock />
       <CurrentUser />
+      <SendTransaction />
     </Wrapper>
   );
 }
