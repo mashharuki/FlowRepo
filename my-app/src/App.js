@@ -1,6 +1,7 @@
 import './css/App.css';
 import styled from 'styled-components';
 import GetLatestBlock from './components/GetLatestBlock';
+import CurrentUser from './components/Authenticate';
 
 const Wrapper = styled.div`
     font-size: 13px;
@@ -16,6 +17,7 @@ function App() {
   return (
     <Wrapper>
       <GetLatestBlock />
+      <CurrentUser />
     </Wrapper>
   );
 }
