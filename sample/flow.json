@@ -8,6 +8,9 @@
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
 			"key": "8a99d56dd364aace4f591dfb7f5c761395ac05e09d618fad959eeac765c37dd8"
+		},
+		"mashharuki": {
+			"fromFile": "mashharuki.private.json"
 		}
 	}
 }
