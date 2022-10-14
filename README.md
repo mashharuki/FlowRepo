@@ -1,6 +1,36 @@
 # FlowRepo
 this is a develop repo for learning flow Blockchain
 
+### Blocto ウォレットとは
+
+Bloctoウォレットは初めてFLOWに対応したモバイルウォレット。  
+
+<strong>特徴</strong>  
+- ユーザーに優しい手数料設計
+- セキュリティを安全かつ簡素に
+- ブロックチェーンIDを作成する
+- スマートコントラクトによるウォレットサービス
+
+### Blocto Ethereum SDK
+
+- Get access to all the web3.js functionalities
+    - Interact with Ethereum-like networks
+        - Ethereum Mainnet & Rinkeby Testnet
+        - BSC Mainnet & Tesnet
+    - Sign transactions
+    - Send transactions
+    - Lookup smart contract state
+    - Query smart contract events
+    - ... and a lot more
+- Seamless onboarding experience  
+Users can sign up easily with email and start exploring you dApp in seconds.
+- Fee subsidization  
+You have the option to pay transaction fee for your users and provide a better experience. In that case, we will generate daily fee reports for you to review.
+- Integrated payment  
+Get paid easily with our payment APIs. Users can pay easily with credit cards or other crypto currencies like Bitcoin, Ethereum, Tron, USDT, ...
+- Connected to Blocto App  
+Once you've integrated with Blocto SDK, your users can manage their assets easily and securely through Blocto App. Your dApp can tap into the vast blockchain ecosystem instantly.
+
 ### Install the Flow CLI
 
 `brew install flow-cli`  
@@ -386,3 +416,6 @@ Signature Algorithm      ECDSA_P256
 21. [Blocto SDK JavaScript](https://docs.blocto.app/blocto-sdk/javascript-sdk/evm-sdk)
 22. [Crypto Candy](https://github.com/amitkothari/crypto-candy)
 23. [Blocto SDK in Flow dApps](https://docs.blocto.app/blocto-sdk/javascript-sdk/flow)
+24. [Mermaid js Docs](https://mermaid-js.github.io/mermaid/#/)
+25. [Mermaid js Live Editor](https://mermaid.live/edit#pako:eNpVj80OgkAMhF-l6UkTeQEOJgLKxUQTvbEcGqjsRvcnyxJjgHd30Yv21HS-mUxHbGzLmGLnyUm4FsJAnF2VS6_6oKmvIUm2U8kBtDX8miBblRZ6aZ1Tplt_-WyBIB-PC8YQpDL3-SvlH__J8ARFdSQXrKt_levTTrCv1FnG-H9Feo6uQ3Wj9EZJQx5y8h8EN6jZa1JtrD4uF4FBsmaBaVxb8neBwsyRoyHYy8s0mAY_8AYH11LgQlH8WGMMfvQ8vwGEfFP7)
+26. [Mermaid js Tutorial](https://mermaid-js.github.io/mermaid/#/Tutorials)
