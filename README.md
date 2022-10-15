@@ -390,7 +390,13 @@ Signature Algorithm      ECDSA_P256
 ### Blocto Wallet Tutorial
 
 1. `cd my-app`
-2. `npm i @onflow/fcl styled-components`
+2. `npm i @onflow/fcl styled-components`  
+
+Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f71174554954c7418c44C95](https://mumbai.polygonscan.com/address/0x1c45052b39a0a0a01f71174554954c7418c44c95)
+
+### Blocto Wallet用のコントラクトを生成しているコントラクトアドレス
+
+[0xF4f188be75577CE56d53D0A66d6323A99c507ad4](https://testnet.snowtrace.io/address/0xf4f188be75577ce56d53d0a66d6323a99c507ad4)
 
 ### 参考文献
 1. [Developer Portal](https://developers.flow.com/)
@@ -420,3 +426,6 @@ Signature Algorithm      ECDSA_P256
 25. [Mermaid js Live Editor](https://mermaid.live/edit#pako:eNpVj80OgkAMhF-l6UkTeQEOJgLKxUQTvbEcGqjsRvcnyxJjgHd30Yv21HS-mUxHbGzLmGLnyUm4FsJAnF2VS6_6oKmvIUm2U8kBtDX8miBblRZ6aZ1Tplt_-WyBIB-PC8YQpDL3-SvlH__J8ARFdSQXrKt_levTTrCv1FnG-H9Feo6uQ3Wj9EZJQx5y8h8EN6jZa1JtrD4uF4FBsmaBaVxb8neBwsyRoyHYy8s0mAY_8AYH11LgQlH8WGMMfvQ8vwGEfFP7)
 26. [Mermaid js Tutorial](https://mermaid-js.github.io/mermaid/#/Tutorials)
 27. [dapper-contracts](https://github.com/dapperlabs/dapper-contracts)
+28. [FanTopのフロントエンド開発 − Web3におけるユーザ認証](https://techdo.mediado.jp/entry/2022/09/21/090000)
+29. [Web3-React](https://github.com/Uniswap/web3-react#readme)
+30. [MetaMask Docs](https://docs.metamask.io/guide/ethereum-provider.html#methods)
