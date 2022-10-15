@@ -4,10 +4,6 @@ const HDWalletProvider = require("truffle-hdwallet-provider");
 const HDWalletProvider2 = require("@truffle/hdwallet-provider");
 
 const {
-  ETH_NODE_ADDRESS,
-  ETH_NODE_USER,
-  ETH_NODE_PASSWORD,
-  ETH_FROM_ADDRESS,
   HD_MNEMONIC,
   ALCHEMY_GOERLI_API_KEY,
   ALCHEMY_MUNBAI_APIKEY,
@@ -17,34 +13,15 @@ const {
   SNOWTRACE_API_KEY,
 } = process.env;
 
-/**
- * get provider function from HD
- */
- function getHDGoreliProvider() {
-  return new HDWalletProvider(
-    HD_MNEMONIC,
-    "https://eth-goerli.g.alchemy.com/v2/" + ALCHEMY_GOERLI_API_KEY
-  );
-}
-
-/**
- * get provider function from HD
- */
- function getHDMumbaiProvider() {
-  return new HDWalletProvider(
-    HD_MNEMONIC,
-    "https://polygon-mumbai.g.alchemy.com/v2/" + ALCHEMY_MUNBAI_APIKEY
-  );
-}
 
 module.exports = {
   // bulid path for ABI json files
   contracts_build_directory: path.join(__dirname, "./../blocto/src/assets/contracts"),
-  //  plugin
+  // plugin
   plugins: [
     'truffle-plugin-verify'
   ],
-  // config for API
+  // api keys for API
   api_keys: {
     etherscan: ETHERSCAN_API_KEY,
     polygonscan: POLYGONSCAN_API_KEY,
@@ -53,7 +30,7 @@ module.exports = {
   },
   networks: {
     goreli: {
-      provider: getHDGoreliProvider,
+      provider: () => new HDWalletProvider(HD_MNEMONIC, `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_GOERLI_API_KEY}`),
       network_id: 5,
       gas: 5500000,
       confirmations: 2,
@@ -61,7 +38,7 @@ module.exports = {
       skipDryRun: true
     },
     mumbai: {
-      provider: getHDMumbaiProvider,
+      provider: () => new HDWalletProvider(HD_MNEMONIC, `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY_MUNBAI_APIKEY}`),
       network_id: 80001,
       // gas: 500000,
       confirmations: 2,
