@@ -396,7 +396,7 @@ Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f7
 
 ### Blocto Wallet用のコントラクトを生成しているコントラクトアドレス
 
-[0xF4f188be75577CE56d53D0A66d6323A99c507ad4](https://testnet.snowtrace.io/address/0xf4f188be75577ce56d53d0a66d6323a99c507ad4)
+[0x20781013FAACce8F743BefEe48aef1420CA100E0](https://testnet.snowtrace.io/address/0x20781013FAACce8F743BefEe48aef1420CA100E0)
 
 ### 参考文献
 1. [Developer Portal](https://developers.flow.com/)

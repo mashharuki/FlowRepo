@@ -127,7 +127,13 @@ function App() {
         params: param,
       });
 
+      // get comment
+      const messages = await Contract.methods.getOwnMessages().call({
+        from: signers[0],
+      });
+
       alert("post success!!");
+      console.log("messages:", messages);
     } catch(e) {
       console.error("err:", e);
       alert("post fail..");
@@ -166,7 +172,7 @@ function App() {
         </button>
         <button
           onClick={()=>{
-            post("0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", "test");
+            post("0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", "test23");
           }}
         >
           post
