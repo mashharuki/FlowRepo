@@ -3,7 +3,7 @@ import './assets/css/App.css';
 import { useEffect, useState } from "react";
 import Web3 from 'web3';
 import BloctoSDK from '@blocto/sdk';
-import Messenger from './assets/contacts/Messenger.json';
+import Messenger from './assets/contracts/Messenger.json';
 
 const {
   REACT_APP_MUNBAI_KEY

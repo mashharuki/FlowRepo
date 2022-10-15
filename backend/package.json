@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "compile": "truffle compile",
+    "build": "truffle build",
+    "deploy:goreli": "truffle migrate --network goreli",
+    "deploy:mumbai": "truffle migrate --network mumbai",
+    "deploy:bsctest": "truffle migrate --network bsctest",
+    "deploy:fuji": "truffle migrate --network fuji",
+    "verify:goreli": "truffle run verify Migrations --network goreli",
+    "verify:mumbai": "truffle run verify Migrations --network mumbai",
+    "verify:bsctest": "truffle run verify Migrations --network bsctest",
+    "verify:fuji": "truffle run verify Migrations --network fuji"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.1.0",
+    "dotenv": "^16.0.3",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "dependencies": {
+    "truffle-plugin-verify": "^0.5.31"
+  }
+}

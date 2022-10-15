@@ -398,6 +398,27 @@ Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f7
 
 [0x20781013FAACce8F743BefEe48aef1420CA100E0](https://testnet.snowtrace.io/address/0x20781013FAACce8F743BefEe48aef1420CA100E0)
 
+
+### Blocto Walletで利用されている技術
+
+- コントラクトウォレット
+- スマートコントラクトからスマートコントラクトを生成する設計パターン(Factory パターン)
+- メタトランザクション
+- ワンタイムパスワード
+
+### メタトランザクションとは
+ガス代を支払わずに実行できるトランザクションのこと。  
+マイナーに払うガス代を誰かに負担してもらうことができる。
+
+### ユーザービリティでの改善案
+- QRコードなどで行けると良い
+- ウォレットを作成したあとは、アドレスなどの情報を知りたいはずなのでそれを表示できるアカウントページがあると良いのではないか？
+    - アドレス
+    - メールアドレス
+
+### コントラクトウォレットとは
+EOAではなく、コントラクトウォレットをユーザーのウォレットとして使用するもの。
+
 ### 参考文献
 1. [Developer Portal](https://developers.flow.com/)
 2. [Blocto Wallet｜ウォレットの使い方とFlowのステーキング方法](https://dappsmarket.net/guide/blocto-howtouse/)
@@ -429,3 +450,8 @@ Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f7
 28. [FanTopのフロントエンド開発 − Web3におけるユーザ認証](https://techdo.mediado.jp/entry/2022/09/21/090000)
 29. [Web3-React](https://github.com/Uniswap/web3-react#readme)
 30. [MetaMask Docs](https://docs.metamask.io/guide/ethereum-provider.html#methods)
+31. [JPYCv2のメタトランザクション機能の紹介](https://zenn.dev/jpyc/articles/ff5922abf2046c)
+32. [「Dapper」はガス代がかからない仮想通貨ウォレット！インストール方法と特徴を解説（追記あり）](https://news.blockchaingame.jp/494#:~:text=%E6%96%B9%E3%81%AB%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1-,1.Dapper%E3%81%A8%E3%81%AF%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E8%AA%B2%E9%A1%8C%E7%82%B9,%E9%80%9A%E8%B2%A8%E3%82%A6%E3%82%A9%E3%83%AC%E3%83%83%E3%83%88%E3%81%AE%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
+33. [Dapperコントラクトのコードを理解する](https://qiita.com/avcdsld/items/2e97a553159e6d278b43)
+34. [【Azure】クイック スタート:SMS メッセージを送信する](https://learn.microsoft.com/ja-jp/azure/communication-services/quickstarts/sms/send?tabs=windows&pivots=programming-language-javascript)
+35. [Dapper Contract 解説/Dapper Contract](https://speakerdeck.com/avcdsld/dapper-contract?slide=35)
