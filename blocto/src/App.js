@@ -24,29 +24,44 @@ function App() {
   const [blocto, setBlocto] = useState(null);
   const [accounts, setAccounts] = useState(null);
   const [web3, setWeb3] = useState(null);
+  const [isConnected, setIsConnected] = useState(false);
 
   useEffect(()=>{
-    // create bloctoSDK object
-    const bloctoSDK = new BloctoSDK({
-      ethereum: {
-          chainId: chainId, 
-          rpc: RPC_URL,
-      },
-    });
-    // create web3 object
-    const provider = new Web3(RPC_URL);
+    /**
+     * init function
+     */
+    const init = async() => {
+      // create bloctoSDK object
+      const bloctoSDK = new BloctoSDK({
+        ethereum: {
+            chainId: chainId, 
+            rpc: RPC_URL,
+        },
+      });
 
-    setBlocto(bloctoSDK);
-    setWeb3(provider);
+      // create web3 object
+      const provider = new Web3(RPC_URL);
+
+      setBlocto(bloctoSDK);
+      setWeb3(provider);
+      // call connect function
+      connect();
+    }
+    // call init function
+    init();
   }, [])
 
   /**
    * connect function
    */
-  const connect = () => {
+  const connect = async() => {
     // request
-    const signers = blocto.ethereum.request({ method: 'eth_requestAccounts' });
+    const signers = await blocto.ethereum.request({ method: 'eth_requestAccounts' });
+    // get connect status
+    const isConnect = await blocto.ethereum.connected;
+
     setAccounts(signers);
+    setIsConnected(isConnect);
   }
 
   /**
@@ -145,38 +160,35 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Demo App
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button
-          onClick={connect}
-        >
-          connect
-        </button>
-        <button
-          onClick={sign}
-        >
-          sign
-        </button>
-        <button
-          onClick={send}
-        >
-          send
-        </button>
-        <button
-          onClick={()=>{
-            post("0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", "test23");
-          }}
-        >
-          post
-        </button>
+        { isConnected ? 
+          (<>
+            <button
+              onClick={sign}
+            >
+              sign
+            </button>
+            <button
+              onClick={send}
+            >
+              send
+            </button>
+            <button
+              onClick={()=>{
+                post("0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", "test23");
+              }}
+            >
+              post
+            </button>
+          </>)
+        : 
+          <button
+            onClick={connect}
+          >
+            connect
+          </button>
+        }
       </header>
     </div>
   );
