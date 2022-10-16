@@ -417,7 +417,24 @@ Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f7
     - メールアドレス
 
 ### コントラクトウォレットとは
-EOAではなく、コントラクトウォレットをユーザーのウォレットとして使用するもの。
+EOAではなく、コントラクトウォレットをユーザーのウォレットとして使用するもの。  
+イーサリアムの世界には2種類のアドレスが存在する。  
+- EOA(Externally Owned Address)  
+鍵ペアから生成される一般的なウォレットアドレス。秘密鍵を使って署名することでトランザクションを送信できる。
+- コントラクトアドレス
+スマートコントラクトに付与されるアドレス。秘密鍵がないため署名ができない。(秘密鍵を保存する必要がない！)  
+そのため、基本的にはEOA起点でインターナルトランザクションを送信する形になる。
+
+### IAP (Identity-Aware Proxy) とは
+ユーザとアプリケーションの間で通信を仲介するプロキシの一つ。  
+多くのIAPでは大きく3つの機能を提供している。
+
+- コネクター  
+IAPとオンプレミスアプリケーションの通信を中継するサーバ
+- エージェント  
+しかし、エージェントを導入することで、Webアプリ以外のアプリケーションにも、IAP経由でアクセスできるようになる
+- 認証基盤連携  
+IAP自身には、認証・認可機能がないので、別途Azure ADやIDaaSなどの認証基盤を用意し、IAM連携で認証・認可を実施する。
 
 ### 参考文献
 1. [Developer Portal](https://developers.flow.com/)
@@ -455,3 +472,9 @@ EOAではなく、コントラクトウォレットをユーザーのウォレ�
 33. [Dapperコントラクトのコードを理解する](https://qiita.com/avcdsld/items/2e97a553159e6d278b43)
 34. [【Azure】クイック スタート:SMS メッセージを送信する](https://learn.microsoft.com/ja-jp/azure/communication-services/quickstarts/sms/send?tabs=windows&pivots=programming-language-javascript)
 35. [Dapper Contract 解説/Dapper Contract](https://speakerdeck.com/avcdsld/dapper-contract?slide=35)
+36. [IAPとは？VPNと比較しつつ、メリットを解説](https://solution.kamome-e.com/blog-security-20220706/)
+37. [Cloud Run で Identity-Aware Proxy (IAP) を使う](https://zenn.dev/ww24/articles/19099c85febe0d)
+38. [電話番号で本人確認を行う「SMS認証」とは？仕組みを解説](https://ekyc.nexway.co.jp/blog/26)
+38. [Node.js を使用したユーザーの認証](https://cloud.google.com/nodejs/getting-started/authenticate-users?hl=ja)
+39. [GCP + Node.js を使用したユーザーの認証のサンプルコード](https://github.com/GoogleCloudPlatform/nodejs-getting-started/blob/HEAD/authenticating-users/app.js)
+40. [Solidity by Example](https://solidity-by-example.org/)
