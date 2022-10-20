@@ -7,27 +7,27 @@
     "test": "test"
   },
   "scripts": {
-    "test": "truffle test",
-    "compile": "truffle compile",
-    "build": "truffle build",
-    "deploy:goreli": "truffle migrate --network goreli",
-    "deploy:mumbai": "truffle migrate --network mumbai",
-    "deploy:bsctest": "truffle migrate --network bsctest",
-    "deploy:harmony": "truffle migrate --network harmony",
-    "deploy:ftm": "truffle migrate --network ftm",
-    "deploy:fuji": "truffle migrate --network fuji",
-    "deploy:op": "truffle migrate --network op",
-    "deploy:arbitrum": "truffle migrate --network arbitrum",
-    "deploy:aurora": "truffle migrate --network aurora",
-    "verify:goreli": "truffle run verify Migrations --network goreli",
-    "verify:mumbai": "truffle run verify Migrations --network mumbai",
-    "verify:bsctest": "truffle run verify Migrations --network bsctest",
-    "verify:fuji": "truffle run verify Migrations --network fuji",
-    "verify:ftm": "truffle run verify Migrations --network ftm",
-    "verify:aurora": "truffle run verify Migrations --network aurora"
+    "test": "npx truffle test",
+    "compile": "npx truffle compile",
+    "build": "npx truffle build",
+    "deploy:goreli": "npx truffle migrate --network goreli",
+    "deploy:mumbai": "npx truffle migrate --network mumbai",
+    "deploy:bsctest": "npx truffle migrate --network bsctest",
+    "deploy:harmony": "npx truffle migrate --network harmony",
+    "deploy:ftm": "npx truffle migrate --network ftm",
+    "deploy:fuji": "npx truffle migrate --network fuji",
+    "deploy:op": "npx truffle migrate --network op",
+    "deploy:arbitrum": "npx truffle migrate --network arbitrum",
+    "deploy:aurora": "npx truffle migrate --network aurora",
+    "verify:goreli": "npx truffle run verify Migrations --network goreli",
+    "verify:mumbai": "npx truffle run verify Migrations --network mumbai",
+    "verify:bsctest": "npx truffle run verify Migrations --network bsctest",
+    "verify:fuji": "npx truffle run verify Migrations --network fuji",
+    "verify:ftm": "npx truffle run verify Migrations --network ftm",
+    "verify:aurora": "npx truffle run verify Migrations --network aurora"
   },
   "keywords": [],
-  "author": "",
+  "author": "mashharuki",
   "license": "ISC",
   "devDependencies": {
     "@truffle/hdwallet-provider": "^2.1.0",
@@ -35,6 +35,7 @@
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
     "truffle-plugin-verify": "^0.5.31"
   }
 }
