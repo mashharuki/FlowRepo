@@ -11,6 +11,8 @@ const {
   POLYGONSCAN_API_KEY,
   BSCSCAN_API_KEY,
   SNOWTRACE_API_KEY,
+  FAMTOMSCAN_API_KEY,
+  AURORASCAN_API_KEY
 } = process.env;
 
 
@@ -27,6 +29,8 @@ module.exports = {
     polygonscan: POLYGONSCAN_API_KEY,
     bscscan: BSCSCAN_API_KEY,
     snowtrace: SNOWTRACE_API_KEY,
+    ftmscan: FAMTOMSCAN_API_KEY,
+    aurorascan: AURORASCAN_API_KEY
   },
   networks: {
     goreli: {
@@ -58,6 +62,29 @@ module.exports = {
       confirmations: 10,
       timeoutBlocks: 200,
       skipDryRun: true
+    },
+    harmony: {
+      provider: () => new HDWalletProvider2(HD_MNEMONIC,'https://api.s0.b.hmny.io'),
+      network_id: 1666700000,
+    },
+    ftm: {
+      provider: () => new HDWalletProvider2(HD_MNEMONIC,'https://rpc.testnet.fantom.network/'),
+      network_id: 0xfa2,
+    },
+    op: {
+      provider: () => new HDWalletProvider2(HD_MNEMONIC,'https://goerli.optimism.io'),
+      network_id: 420,
+      confirmations: 10,
+      skipDryRun: true
+    },
+    arbitrum: {
+      provider: () => new HDWalletProvider2(HD_MNEMONIC,'https://goerli-rollup.arbitrum.io/rpc'),
+      network_id: 421613,
+    },
+    aurora: {
+      provider: () => new HDWalletProvider2(HD_MNEMONIC,'https://testnet.aurora.dev'),
+      network_id: 0x4e454153,
+      gas: 10000000,
     },
   },
   mocha: {
