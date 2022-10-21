@@ -9,7 +9,6 @@ const WalletFactory = artifacts.require("WalletFactoryV2");
 const MultiSigWallet = artifacts.require("MultiSigWallet");
 const MyToken = artifacts.require("MyToken");
 
-
 /**
  * test
  */
