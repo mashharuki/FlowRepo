@@ -71,9 +71,11 @@ contract WalletFactoryV2 {
         // create IDQToken object
         MyToken token = MyToken(_tokenAddr);
         // check
-        require(token.balanceOf(address(this)) >= _amount, "Inffuluent Tokens");
+        require(token.balanceOf(address(this)) >= _amount, "insufficient Tokens");
+        // approve
+        token.approve(address(this), _amount); 
         // transfer
-        token.transferFrom(msg.sender, address(this), _amount);
+        token.transfer(msg.sender, _amount);
 
         emit transferIDQ(msg.sender, _amount);
     }

@@ -183,6 +183,27 @@ contract("MultiSigWallet & MyToken Contract tests!!", accounts => {
             assert.equal(actual, 10000, "totalSupply should match");
             assert.equal(balance, 10000, "balance should match");
         });
+
+        it("transfer IDQToken", async() => {
+            // IDQTokenをミントする。
+            await myToken.mint(factory.address, 10000, {
+                from: owners[0],
+                gas: 5000000
+            });
+            // approveを実行する。
+            // await myToken.approve(factory.address, "10000", {from: owners[0]});
+            // トークンを移転する。
+            await factory.transferIDQToken(myToken.address, "4000", {
+                from: owners[0],
+                gas: 50000
+            });
+            // get token balance
+            const balance1 = await myToken.balanceOf(owners[0]);
+            const balance2 = await myToken.balanceOf(factory.address);
+            // check
+            assert.equal(balance1, 4000, "balance should match");
+            assert.equal(balance2, 6000, "balance should match");
+        });
     });
 });
 
