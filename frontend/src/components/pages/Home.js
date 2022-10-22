@@ -1,16 +1,9 @@
-import './../../assets/css/App.css';
-import React, { useState, useEffect } from "react";
 import detectEthereumProvider from '@metamask/detect-provider';
-import FactoryContract from "../../contracts/WalletFactory.json";
-import WalletDialog from '../common/Dialog';
-import Web3 from "web3";
-import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
-import WalletTable from './WalletTable';
 // mui関連のコンポーネントのインポート
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import { styled } from "@mui/material/styles";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -18,6 +11,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import React, { useEffect, useState } from "react";
+import Web3 from "web3";
+import FactoryContract from "../../contracts/WalletFactory.json";
+import WalletDialog from '../common/Dialog';
+import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
+import './../../assets/css/App.css';
+import WalletTable from './WalletTable';
 
 /**
  * 表の最上位ヘッダー部の配列
@@ -37,7 +37,7 @@ const columns = [
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     maxWidth: 1400,
-    backgroundColor: '#fde9e8'
+    backgroundColor: 'rgb(150, 144, 144)'
 }));
 
 /**

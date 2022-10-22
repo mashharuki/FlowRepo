@@ -202,7 +202,7 @@ function App() {
         { /* 画面上部に表示するAppBarコンポーネント */ }
           <AppBar position="static" color="transparent">
             <Toolbar>
-              <Typography variant="h6" color="white" sx={{ flexGrow: 1 }}>
+              <Typography variant="h6" color="black" sx={{ flexGrow: 1 }}>
                 <strong>IDQ DApp</strong>
               </Typography>
               { /* ウォレットに接続していなければログインアイコンを表示する。 */ }

@@ -1,18 +1,10 @@
-import './../../assets/css/App.css';
-import React, { useState, useEffect } from "react";
 import detectEthereumProvider from '@metamask/detect-provider';
-import { useLocation } from "react-router-dom"; 
-import walletContract from "../../contracts/MultiSigWallet.json";
-import TxTable from './TxTable';
-import Web3 from "web3";
-import ActionButton from '../common/ActionButton';
-import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
+import { TextField } from '@mui/material';
 // mui関連のコンポーネントのインポート
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import { TextField } from '@mui/material';
+import { styled } from "@mui/material/styles";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -20,6 +12,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Web3 from "web3";
+import walletContract from "../../contracts/MultiSigWallet.json";
+import ActionButton from '../common/ActionButton';
+import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
+import './../../assets/css/App.css';
+import TxTable from './TxTable';
 
 /**
  * 表の最上位ヘッダー部の配列
@@ -39,7 +39,7 @@ const columns = [
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     maxWidth: 1400,
-    backgroundColor: '#fde9e8'
+    backgroundColor: 'rgb(150, 144, 144)'
 }));
 
 /**
