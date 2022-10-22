@@ -97,7 +97,7 @@ function App() {
               <Route path="/" exact element={ <Home CONTRACT_ADDRESS={CONTRACT_ADDRESS} provider={web3} blocto={blocto} signer={currentAccount} /> } />
               <Route path="/home" exact element={ <Home CONTRACT_ADDRESS={CONTRACT_ADDRESS} provider={web3} blocto={blocto} signer={currentAccount} /> } />
               <Route path="/create" exact element={ <Create CONTRACT_ADDRESS={CONTRACT_ADDRESS} provider={web3} blocto={blocto} signer={currentAccount} /> } />
-              <Route path="/txs" exact element={ <Txs CONTRACT_ADDRESS={CONTRACT_ADDRESS} provider={web3} blocto={blocto} signer={currentAccount} /> } />
+              <Route path="/txs" exact element={ <Txs /> } />
               <Route path="*" exact element={ <NoPage/> } />
             </Routes>
           )}

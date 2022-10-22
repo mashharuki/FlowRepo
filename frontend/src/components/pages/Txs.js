@@ -1,4 +1,3 @@
-import detectEthereumProvider from '@metamask/detect-provider';
 import { TextField } from '@mui/material';
 // mui関連のコンポーネントのインポート
 import Box from "@mui/material/Box";
@@ -45,15 +44,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 /**
  * Txsコンポーネント
  */
-const Txs = (props) => {
-    // 引数からデータを取得する。
-    const {
-        CONTRACT_ADDRESS,
-        provider,
-        blocto,
-        signer    
-    } = props;
-    
+const Txs = () => {
     // コントラクト用のステート変数
     const [contract, setContract] = useState(null); 
     // アカウント用のステート変数
@@ -84,6 +75,8 @@ const Txs = (props) => {
     const [page, setPage] = useState(0);
     // 1ページに表示する上限数
     const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [provider, setProvider] = useState(null);
+    const [blocto, setBlocto] = useState(null);
     // locationを使うための変数
     const location = useLocation();
 
@@ -93,28 +86,52 @@ const Txs = (props) => {
     const init = async() => {
         // locationから取得する。
         const addr = location.state.addr;
+        const web3Provider = location.state.provider;
+        const signer = location.state.signer;
+        const bloctoSDK = location.state.blocto;
 
-        try {
-            // プロバイダー情報を取得する。
-            const provider = await detectEthereumProvider();
-            // Web3オブジェクト作成
-            const web3 = new Web3(provider);
-            // アカウント情報を取得する。
-            const web3Accounts = await web3.eth.getAccounts();
-            // コントラクト用のインスタンスを生成する。
-            const instance = new web3.eth.Contract(walletContract.abi, addr);
+        console.log("web3provider:", web3Provider)
+
+        try { 
+            const instance = new web3Provider.eth.Contract(walletContract.abi, addr);
             // トランザクションの情報を取得する。
             const transactions = await instance.methods.getTxs().call();
             // コントラクトとアカウントの情報をステート変数に格納する。
             setContract(instance);
-            setAccount(web3Accounts[0]);
+            setAccount(signer);
             setWallet(addr);
             setTxs(transactions);
+            setProvider(web3Provider);
+            setBlocto(bloctoSDK);
         } catch (error) {
             alert(`Failed to load web3, accounts, or contract. Check console for details.`,);
             console.error(error);
         }
     };
+
+    /**
+     * send Tx function
+     * @param data byte data
+     * @return yxHash Transaction Hash
+     */
+    const sendTx = async(data) => {
+        // トランザクションを作成する
+        const param = [{
+            from: account,
+            to: wallet,
+            gas: '0x76c0', // 30400
+            gasPrice: '0x9184e72a000', // 10000000000000
+            value:  value, 
+            data: data,
+        },];
+        // 送信する
+        const txHash = await blocto.ethereum.request({
+            method: 'eth_sendTransaction', 
+            params: param,
+        });
+        
+        return txHash;
+    }  
 
     /**
      * 「Create」ボタンを押した時の処理
@@ -125,11 +142,11 @@ const Txs = (props) => {
 
         try {
             setIsLoading(true);
-            // sumbitメソッドを呼び出す
-            await contract.methods.submit(to, sendValue, inputData).send({
-                from: account,
-                gas: 650000
-            });
+            // submitメソッドをエンコードする。
+            var data = contract.methods.submit(to, sendValue, inputData).encodeABI();
+            // sendTx
+            await sendTx(data);
+
             setIsLoading(false);
             // popUpメソッドの呼び出し
             popUp(true, "Transaction successfull!!");
@@ -148,11 +165,12 @@ const Txs = (props) => {
     const approveAction = async(txId) => {
         try {
             setIsLoading(true);
-            // sumbitメソッドを呼び出す
-            await contract.methods.approve(txId).send({
-                from: account,
-                gas: 650000
-            });
+            
+            // submitメソッドをエンコードする。
+            var data = contract.methods.approve(txId).encodeABI();
+            // sendTx
+            await sendTx(data);
+
             setIsLoading(false);
             // popUpメソッドの呼び出し
             popUp(true, "Transaction successfull!!");
@@ -171,11 +189,12 @@ const Txs = (props) => {
     const revokeAction = async(txId) => {
         try {
             setIsLoading(true);
-            // sumbitメソッドを呼び出す
-            await contract.methods.revoke(txId).send({
-                from: account,
-                gas: 650000
-            });
+            
+            // revokeメソッドをエンコードする。
+            var data = contract.methods.revoke(txId).encodeABI();
+            // sendTx
+            await sendTx(data);
+            
             setIsLoading(false);
             // popUpメソッドの呼び出し
             popUp(true, "Transaction successfull!!");
@@ -194,11 +213,12 @@ const Txs = (props) => {
     const executeAction = async(txId) => {
         try {
             setIsLoading(true);
-            // sumbitメソッドを呼び出す
-            await contract.methods.execute(txId).send({
-                from: account,
-                gas: 650000
-            });
+            
+            // exexuteメソッドをエンコードする。
+            var data = contract.methods.execute(txId).encodeABI();
+            // sendTx
+            await sendTx(data);
+
             setIsLoading(false);
             // popUpメソッドの呼び出し
             popUp(true, "Transaction successfull!!");
@@ -432,6 +452,8 @@ const Txs = (props) => {
                                         count={txs.length}
                                         rowsPerPage={rowsPerPage}
                                         page={page}
+                                        signer={account}
+                                        provider={provider}
                                         onPageChange={handleChangePage}
                                         onRowsPerPageChange={handleChangeRowsPerPage}
                                     />

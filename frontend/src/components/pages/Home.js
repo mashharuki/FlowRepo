@@ -125,7 +125,8 @@ const Home = (props) => {
                 to: CONTRACT_ADDRESS,
                 gas: '0x76c0', // 30400
                 gasPrice: '0x9184e72a000', //10000000000000
-                value: value, 
+                value: '0x' + value, 
+                data: "0x00",
             },];
 
             // 入金する。
@@ -287,6 +288,9 @@ const Home = (props) => {
                                                                 _columns={columns} 
                                                                 row={row} 
                                                                 index={i} 
+                                                                provider={provider}
+                                                                signer={signer}
+                                                                blocto={blocto}
                                                                 depositAction={(e) => {
                                                                     handleOpen(row)
                                                                 }}

@@ -1,10 +1,8 @@
-import detectEthereumProvider from '@metamask/detect-provider';
 // mui関連のコンポーネントのインポート
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Web3 from "web3";
 import walletContract from "../../contracts/MultiSigWallet.json";
 import ActionButton2 from '../common/ActionButton2';
 import './../../assets/css/App.css';
@@ -16,7 +14,7 @@ import './../../assets/css/App.css';
 const WalletTable = (props) => {
 
     // propsから引数を取得する。
-    const { _wallet, _columns, row, index, depositAction } = props;
+    const { _wallet, _columns, row, index, depositAction, provider, signer, blocto } = props;
 
     // ウォレットの名前を格納するステート変数
     const [name, setName] = useState(null); 
@@ -29,20 +27,18 @@ const WalletTable = (props) => {
 
     // トランザクション一覧画面に渡す要素
     const toTx = {
-        addr: _wallet
+        addr: _wallet,
+        provider: provider,
+        signer: signer,
+        blocto: blocto,
     };
 
     /**
      * initialization
      */
     const init = async(_wallet) => {
-        // Web3が使えるように設定する。
-        const provider = await detectEthereumProvider();
-        const web3 = new Web3(provider);
-        // アカウント情報を取得する。
-        const web3Accounts = await web3.eth.getAccounts();
         // コントラクトをインスタンス化
-        const instance = new web3.eth.Contract(walletContract.abi, _wallet);
+        const instance = new provider.eth.Contract(walletContract.abi, _wallet);
         // ウォレットコントラクトの各情報を取得する。
         const wName = await instance.methods.getName().call();
         const required = await instance.methods.getRequired().call();
