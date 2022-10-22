@@ -1,4 +1,3 @@
-import detectEthereumProvider from '@metamask/detect-provider';
 // mui関連のコンポーネントのインポート
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -43,7 +42,15 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 /**
  * Homeコンポーネント
  */
-const Home = () => {
+const Home = (props) => {
+    // 引数からデータを取得する。
+    const {
+        CONTRACT_ADDRESS,
+        provider,
+        blocto,
+        signer    
+    } = props;
+
     // コントラクト用のステート変数
     const [contract, setContract] = useState(null); 
     // アカウント用のステート変数
@@ -76,18 +83,8 @@ const Home = () => {
      */
     const init = async() => {
         try {
-            // プロバイダー情報を取得する。
-            const provider = await detectEthereumProvider();
-            // Web3オブジェクト作成
-            const web3 = new Web3(provider);
-            // アカウント情報を取得する。
-            const web3Accounts = await web3.eth.getAccounts();
-            // ネットワークIDを取得する。
-            const networkId = await web3.eth.net.getId();
-            // コントラクトのアドレスを取得する。
-            const deployedNetwork = FactoryContract.networks[networkId];
             // コントラクト用のインスタンスを生成する。
-            const instance = new web3.eth.Contract(FactoryContract.abi, deployedNetwork && deployedNetwork.address,);
+            const instance = new provider.eth.Contract(FactoryContract.abi, CONTRACT_ADDRESS);
             var multiSigWallets;
 
             // 作成済みウォレットアドレスを取得する。
@@ -101,7 +98,7 @@ const Home = () => {
             
             // コントラクトとアカウントの情報をステート変数に格納する。
             setContract(instance);
-            setAccount(web3Accounts[0]);
+            setAccount(signer);
             setWallets(multiSigWallets);
         } catch (error) {
             alert(`Failed to load web3, accounts, or contract. Check console for details.`,);
@@ -114,26 +111,28 @@ const Home = () => {
      * @param wallet ウォレットアドレス
      */
     const depositAction = async (wallet) => {
-        try {
 
+        try {
             setDepositAddr("");
             setOpen(false);
             setIsLoading(true);
+            // 入金額を16進数に変換する。
+            const value = Web3.utils.toWei(amount.toString());
+            
+            // tx param data
+            const param = [{
+                from: account,
+                to: CONTRACT_ADDRESS,
+                gas: '0x76c0', // 30400
+                gasPrice: '0x9184e72a000', //10000000000000
+                value: value, 
+            },];
 
-            // 入金額を定義する。
-            const value = Web3.utils.toWei(amount);
-            // プロバイダー情報を取得する。
-            const provider = await detectEthereumProvider();
-            // Web3オブジェクト作成
-            const web3 = new Web3(provider);
             // 入金する。
-            const txHash = await web3.eth.sendTransaction(
-                {
-                    from: account,
-                    to: wallet,
-                    value: value
-                }
-            );
+            const txHash = await blocto.ethereum.request({
+                method: 'eth_sendTransaction', 
+                params: param,
+            });
 
             setAmount(0);
             setIsLoading(false);

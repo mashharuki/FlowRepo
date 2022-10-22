@@ -37,7 +37,7 @@ contract("MultiSigWallet & MyToken Contract tests!!", accounts => {
 
         for (let i=0; i < count; i++) {
             // create MultiSigWallet Contract
-            await factory.createWallet(`${name} ${i}`, owners, required);
+            await factory.createWallet(`${name} ${i}`, owners, required, 0.05);
         }
     }
 
@@ -147,7 +147,7 @@ contract("MultiSigWallet & MyToken Contract tests!!", accounts => {
         });
     });
 
-    describe ("deposit && mint test", async () => {
+    describe ("deposit && faucet &&mint test", async () => {
         it("deposit", async () => {
             // 入金額を定義する。
             const value = web3.utils.toWei('0.05');
@@ -183,6 +183,7 @@ contract("MultiSigWallet & MyToken Contract tests!!", accounts => {
             assert.equal(balance, 10000, "balance should match");
         });
 
+        /*
         it("transfer IDQToken", async() => {
             // IDQTokenをミントする。
             await myToken.mint(factory.address, 10000, {
@@ -203,6 +204,7 @@ contract("MultiSigWallet & MyToken Contract tests!!", accounts => {
             assert.equal(balance1, 4000, "balance should match");
             assert.equal(balance2, 6000, "balance should match");
         });
+        */
     });
 });
 

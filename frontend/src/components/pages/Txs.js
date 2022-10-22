@@ -45,7 +45,15 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 /**
  * Txsコンポーネント
  */
-const Txs = () => {
+const Txs = (props) => {
+    // 引数からデータを取得する。
+    const {
+        CONTRACT_ADDRESS,
+        provider,
+        blocto,
+        signer    
+    } = props;
+    
     // コントラクト用のステート変数
     const [contract, setContract] = useState(null); 
     // アカウント用のステート変数
@@ -307,7 +315,7 @@ const Txs = () => {
                                                     p: '2px 4px', 
                                                     display: 'flex', 
                                                     alignItems: 'center', 
-                                                    backgroundColor: '#fde9e8',
+                                                    backgroundColor: 'rgb(150, 144, 144)',
                                                     width: 450, 
                                                     marginTop: 1
                                                 }}
@@ -340,7 +348,7 @@ const Txs = () => {
                                                     p: '2px 4px', 
                                                     display: 'flex', 
                                                     alignItems: 'center', 
-                                                    backgroundColor: '#fde9e8',
+                                                    backgroundColor: 'rgb(150, 144, 144)',
                                                     width: 450, 
                                                     marginTop: 1
                                                 }}

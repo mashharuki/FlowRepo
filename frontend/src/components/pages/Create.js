@@ -1,4 +1,3 @@
-import detectEthereumProvider from '@metamask/detect-provider';
 import { TextField } from '@mui/material';
 // mui関連のコンポーネントのインポート
 import Box from "@mui/material/Box";
@@ -7,7 +6,6 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import React, { useEffect, useState } from "react";
-import Web3 from "web3";
 import FactoryContract from "../../contracts/WalletFactory.json";
 import ActionButton from '../common/ActionButton';
 import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
@@ -25,7 +23,15 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 /**
  * Createコンポーネント
  */
-const Create = () => {
+const Create = (props) => {
+    // 引数からデータを取得する。
+    const {
+        CONTRACT_ADDRESS,
+        provider,
+        blocto,
+        signer    
+    } = props;
+    
     // コントラクト用のステート変数
     const [contract, setContract] = useState(null); 
     // アカウント用のステート変数
@@ -52,21 +58,11 @@ const Create = () => {
      */
     const init = async() => {
         try {
-            // プロバイダー情報を取得する。
-            const provider = await detectEthereumProvider();
-            // Web3オブジェクト作成
-            const web3 = new Web3(provider);
-            // アカウント情報を取得する。
-            const web3Accounts = await web3.eth.getAccounts();
-            // ネットワークIDを取得する。
-            const networkId = await web3.eth.net.getId();
-            // コントラクトのアドレスを取得する。
-            const deployedNetwork = FactoryContract.networks[networkId];
-            // コントラクト用のインスタンスを生成する。
-            const instance = new web3.eth.Contract(FactoryContract.abi, deployedNetwork && deployedNetwork.address,);
+            // コントラクトをインスタンス化
+            const instance = new provider.eth.Contract(FactoryContract.abi, CONTRACT_ADDRESS);
             // コントラクトとアカウントの情報をステート変数に格納する。
             setContract(instance);
-            setAccount(web3Accounts[0]);
+            setAccount(signer);
         } catch (error) {
             alert(`Failed to load web3, accounts, or contract. Check console for details.`,);
             console.error(error);
@@ -80,11 +76,23 @@ const Create = () => {
         console.log("owners:", owners)
         try {
             setIsLoading(true);
-            // createWalletメソッドを呼び出す。
-            await contract.methods.createWallet(walletName, owners, required).send({
-                from: account,
-                gas: 6500000
+            // createWalletメソッドをエンコードする。
+            var data = contract.methods.createWallet(walletName, owners, required).encodeABI();
+            // トランザクションを作成する
+            const param = [{
+                from: signer,
+                to: CONTRACT_ADDRESS,
+                gas: '0x76c0', // 30400
+                gasPrice: '0x9184e72a000', // 10000000000000
+                value:  '0x00', 
+                data: data,
+            },];
+            // 送信する
+            const txHash = await blocto.ethereum.request({
+                method: 'eth_sendTransaction', 
+                params: param,
             });
+            
             setIsLoading(false);
             // ownersの配列を空にする。
             setOwners([]);
