@@ -5,16 +5,16 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import WalletConnect from "@walletconnect/client";
+import QRCodeModal from "@walletconnect/qrcode-modal";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './../assets/css/App.css';
 import NoPage from './common/NoPage';
 import Web3Menu from "./common/Web3Menu";
-import Home from './pages/Home';
 import Create from './pages/Create';
+import Home from './pages/Home';
 import Txs from './pages/Txs';
-import WalletConnect from "@walletconnect/client";
-import QRCodeModal from "@walletconnect/qrcode-modal";
 
 // create connector object
 const connector = new WalletConnect({
@@ -203,7 +203,7 @@ function App() {
           <AppBar position="static" color="transparent">
             <Toolbar>
               <Typography variant="h6" color="white" sx={{ flexGrow: 1 }}>
-                <strong>MultiSig DApp</strong>
+                <strong>IDQ DApp</strong>
               </Typography>
               { /* ウォレットに接続していなければログインアイコンを表示する。 */ }
               <Typography variant="h6" color="inherit">

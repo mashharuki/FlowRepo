@@ -1,41 +1,43 @@
 # FlowRepo
+
 this is a develop repo for learning flow Blockchain
 
 ### Blocto ウォレットとは
 
-Bloctoウォレットは初めてFLOWに対応したモバイルウォレット。  
+Blocto ウォレットは初めて FLOW に対応したモバイルウォレット。
 
-<strong>特徴</strong>  
+<strong>特徴</strong>
+
 - ユーザーに優しい手数料設計
 - セキュリティを安全かつ簡素に
-- ブロックチェーンIDを作成する
+- ブロックチェーン ID を作成する
 - スマートコントラクトによるウォレットサービス
 
 ### Blocto Ethereum SDK
 
 - Get access to all the web3.js functionalities
-    - Interact with Ethereum-like networks
-        - Ethereum Mainnet & Rinkeby Testnet
-        - BSC Mainnet & Tesnet
-    - Sign transactions
-    - Send transactions
-    - Lookup smart contract state
-    - Query smart contract events
-    - ... and a lot more
+  - Interact with Ethereum-like networks
+    - Ethereum Mainnet & Rinkeby Testnet
+    - BSC Mainnet & Tesnet
+  - Sign transactions
+  - Send transactions
+  - Lookup smart contract state
+  - Query smart contract events
+  - ... and a lot more
 - Seamless onboarding experience  
-Users can sign up easily with email and start exploring you dApp in seconds.
+  Users can sign up easily with email and start exploring you dApp in seconds.
 - Fee subsidization  
-You have the option to pay transaction fee for your users and provide a better experience. In that case, we will generate daily fee reports for you to review.
+  You have the option to pay transaction fee for your users and provide a better experience. In that case, we will generate daily fee reports for you to review.
 - Integrated payment  
-Get paid easily with our payment APIs. Users can pay easily with credit cards or other crypto currencies like Bitcoin, Ethereum, Tron, USDT, ...
+  Get paid easily with our payment APIs. Users can pay easily with credit cards or other crypto currencies like Bitcoin, Ethereum, Tron, USDT, ...
 - Connected to Blocto App  
-Once you've integrated with Blocto SDK, your users can manage their assets easily and securely through Blocto App. Your dApp can tap into the vast blockchain ecosystem instantly.
+  Once you've integrated with Blocto SDK, your users can manage their assets easily and securely through Blocto App. Your dApp can tap into the vast blockchain ecosystem instantly.
 
 ### Install the Flow CLI
 
-`brew install flow-cli`  
+`brew install flow-cli`
 
-`flow -h`  
+`flow -h`
 
 レスポンス例
 
@@ -90,32 +92,32 @@ Use "flow [command] --help" for more information about a command.
 
 `brew upgrade flow-cli`
 
-### Generate Key 
+### Generate Key
 
-`flow keys generate`  
+`flow keys generate`
 
-レスポンス例※下記の鍵は開発用！！  
+レスポンス例※下記の鍵は開発用！！
 
 ```zsh
-🔴️ Store private key safely and don't share with anyone! 
-Private Key              aa82c278172073b9a84a71872b82021c5c10ce2f2f704dad0467d0422c8830b5 
-Public Key               a2462e7a65c0ab9f2856a12d53316d467d873370133c1920574ab5ded9afd67e8f93866557e0d8df6ca27f5e197e7c2044e85b5d3ccdf32ab2180bdf77df2ec0 
-Mnemonic                 weather middle make account peace fossil front measure antique girl account sorry 
-Derivation Path          m/44'/539'/0'/0/0 
+🔴️ Store private key safely and don't share with anyone!
+Private Key              aa82c278172073b9a84a71872b82021c5c10ce2f2f704dad0467d0422c8830b5
+Public Key               a2462e7a65c0ab9f2856a12d53316d467d873370133c1920574ab5ded9afd67e8f93866557e0d8df6ca27f5e197e7c2044e85b5d3ccdf32ab2180bdf77df2ec0
+Mnemonic                 weather middle make account peace fossil front measure antique girl account sorry
+Derivation Path          m/44'/539'/0'/0/0
 ```
 
-json形式で出力した場合は下記のコマンド  
-`flow keys generate --output json`  
+json 形式で出力した場合は下記のコマンド  
+`flow keys generate --output json`
 
 ### Create Account
 
-1. `flow init` 
+1. `flow init`
 
 ```zsh
 Configuration initialized
 Service account: 0xf8d6e0586b0a20c7
 
-Start emulator by running: 'flow emulator' 
+Start emulator by running: 'flow emulator'
 Reset configuration using: 'flow init --reset'
 ```
 
@@ -168,9 +170,10 @@ Contracts (hidden, use --include contracts)
 ```
 
 テストネットのアカウントのデータを取得する場合には下記のようなコマンドを打つこと  
-`flow accounts get 0x11e681a52f08ed7a -n testnet`  
+`flow accounts get 0x11e681a52f08ed7a -n testnet`
 
 レスポンス例
+
 ```zsh
 Address  0x11e681a52f08ed7a
 Balance  1000.00100000
@@ -190,7 +193,7 @@ Contracts Deployed: 0
 Contracts (hidden, use --include contracts)
 ```
 
-4. `flow accounts create`  
+4. `flow accounts create`
 
 ```zsh
 Enter an account name: mashharuki
@@ -217,11 +220,12 @@ Here’s a summary of all the actions that were taken:
  - Added mashharuki.private.json to .gitignore.
 ```
 
-### Deploy Contract with CLI 
+### Deploy Contract with CLI
 
-`flow accounts add-contract HelloWorld ./smartcontract/HelloWorld.cdc --signer mashharuki --network testnet`  
+`flow accounts add-contract HelloWorld ./smartcontract/HelloWorld.cdc --signer mashharuki --network testnet`
 
 レスポンス例
+
 ```zsh
 Address  0x11e681a52f08ed7a
 Balance  1000.00099756
@@ -242,23 +246,25 @@ Contract: 'HelloWorld'
 Contracts (hidden, use --include contracts)
 ```
 
-### Upgrade Contract with CLI 
+### Upgrade Contract with CLI
+
 `flow accounts upgrade-contract FungibleToken`
 
-### remove Contract with CLI 
+### remove Contract with CLI
+
 `flow accounts remove-contract FungibleToken`
 
 ### Get Account Staking Info with CLI
 
 `flow accounts staking-info mashharuki`
 
-### Execute Script 
+### Execute Script
 
 `flow scripts execute <filename> [<argument> <argument>...] [flags]`
 
 ### Send Transaction
 
-`flow transactions send <code filename> [<argument> <argument>...] [flags]`  
+`flow transactions send <code filename> [<argument> <argument>...] [flags]`
 
 `flow transactions send ./tx/Transaction1.cdc -n testnet --signer mashharuki`
 
@@ -280,28 +286,28 @@ No Payload Signatures
 Envelope Signature 0: 11e681a52f08ed7a
 Signatures (minimized, use --include signatures)
 
-Events:          
+Events:
     Index       0
     Type        A.7e60df042a9c0868.FlowToken.TokensWithdrawn
     Tx ID       53393a4e46ee0f556863b40b08f7246517b18dc4508b9216f764415592091ab4
     Values
-                - amount (UFix64): 0.00000199 
-                - from (Address?): 0x11e681a52f08ed7a 
+                - amount (UFix64): 0.00000199
+                - from (Address?): 0x11e681a52f08ed7a
 
     Index       1
     Type        A.7e60df042a9c0868.FlowToken.TokensDeposited
     Tx ID       53393a4e46ee0f556863b40b08f7246517b18dc4508b9216f764415592091ab4
     Values
-                - amount (UFix64): 0.00000199 
-                - to (Address?): 0x912d5440f7e3769e 
+                - amount (UFix64): 0.00000199
+                - to (Address?): 0x912d5440f7e3769e
 
     Index       2
     Type        A.912d5440f7e3769e.FlowFees.FeesDeducted
     Tx ID       53393a4e46ee0f556863b40b08f7246517b18dc4508b9216f764415592091ab4
     Values
-                - amount (UFix64): 0.00000199 
-                - inclusionEffort (UFix64): 1.00000000 
-                - executionEffort (UFix64): 0.00000020 
+                - amount (UFix64): 0.00000199
+                - inclusionEffort (UFix64): 1.00000000
+                - executionEffort (UFix64): 0.00000020
 
 
 
@@ -347,7 +353,7 @@ transaction {
     // prepare
         prepare(acct: AuthAccount) {}
 
-💾 result saved to: ./tx/build/built.rlp 
+💾 result saved to: ./tx/build/built.rlp
 ```
 
 ### sign Transaction
@@ -374,7 +380,7 @@ Hash Algorithm           SHA3_256
 Signature Algorithm      ECDSA_P256
 ```
 
-### Verify a Signature 
+### Verify a Signature
 
 `flow signatures verify "test" 81011560982e5b9579de6c7d94907c8299a60899df2709030261d3f0df5fbe07aecd0ad91db78c52f95213b8eac6d0f9499a0722b483ddece151f4d51b1aa8b4 0xcfd14c89f22695a20a7a566e3bfa7cf4ff5c1fbc11880bd22bb3d0e00b5f0552fda8f5e4a3546ae3482dfee9b54bbe73eb3e77cfcfeb032dfcba64b34be3a148`
 
@@ -390,16 +396,15 @@ Signature Algorithm      ECDSA_P256
 ### Blocto Wallet Tutorial
 
 1. `cd my-app`
-2. `npm i @onflow/fcl styled-components`  
+2. `npm i @onflow/fcl styled-components`
 
 Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f71174554954c7418c44C95](https://mumbai.polygonscan.com/address/0x1c45052b39a0a0a01f71174554954c7418c44c95)
 
-### Blocto Wallet用のコントラクトを生成しているコントラクトアドレス
+### Blocto Wallet 用のコントラクトを生成しているコントラクトアドレス
 
 [0x20781013FAACce8F743BefEe48aef1420CA100E0](https://testnet.snowtrace.io/address/0x20781013FAACce8F743BefEe48aef1420CA100E0)
 
-
-### Blocto Walletで利用されている技術
+### Blocto Wallet で利用されている技術
 
 - コントラクトウォレット
 - スマートコントラクトからスマートコントラクトを生成する設計パターン(Factory パターン)
@@ -407,38 +412,48 @@ Blocto で生成したウォレットのアドレスは、[0x1c45052B39A0a0A01f7
 - ワンタイムパスワード
 
 ### メタトランザクションとは
+
 ガス代を支払わずに実行できるトランザクションのこと。  
 マイナーに払うガス代を誰かに負担してもらうことができる。
 
 ### ユーザービリティでの改善案
-- QRコードなどで行けると良い
+
+- QR コードなどで行けると良い
 - ウォレットを作成したあとは、アドレスなどの情報を知りたいはずなのでそれを表示できるアカウントページがあると良いのではないか？
-    - アドレス
-    - メールアドレス
+  - アドレス
+  - メールアドレス
 
 ### コントラクトウォレットとは
-EOAではなく、コントラクトウォレットをユーザーのウォレットとして使用するもの。  
-イーサリアムの世界には2種類のアドレスが存在する。  
+
+EOA ではなく、コントラクトウォレットをユーザーのウォレットとして使用するもの。  
+イーサリアムの世界には 2 種類のアドレスが存在する。
+
 - EOA(Externally Owned Address)  
-鍵ペアから生成される一般的なウォレットアドレス。秘密鍵を使って署名することでトランザクションを送信できる。
+  鍵ペアから生成される一般的なウォレットアドレス。秘密鍵を使って署名することでトランザクションを送信できる。
 - コントラクトアドレス
-スマートコントラクトに付与されるアドレス。秘密鍵がないため署名ができない。(秘密鍵を保存する必要がない！)  
-そのため、基本的にはEOA起点でインターナルトランザクションを送信する形になる。
+  スマートコントラクトに付与されるアドレス。秘密鍵がないため署名ができない。(秘密鍵を保存する必要がない！)  
+  そのため、基本的には EOA 起点でインターナルトランザクションを送信する形になる。
 
 ### IAP (Identity-Aware Proxy) とは
+
 ユーザとアプリケーションの間で通信を仲介するプロキシの一つ。  
-多くのIAPでは大きく3つの機能を提供している。
+多くの IAP では大きく 3 つの機能を提供している。
 
 - コネクター  
-IAPとオンプレミスアプリケーションの通信を中継するサーバ
+  IAP とオンプレミスアプリケーションの通信を中継するサーバ
 - エージェント  
-しかし、エージェントを導入することで、Webアプリ以外のアプリケーションにも、IAP経由でアクセスできるようになる
+  しかし、エージェントを導入することで、Web アプリ以外のアプリケーションにも、IAP 経由でアクセスできるようになる
 - 認証基盤連携  
-IAP自身には、認証・認可機能がないので、別途Azure ADやIDaaSなどの認証基盤を用意し、IAM連携で認証・認可を実施する。
+  IAP 自身には、認証・認可機能がないので、別途 Azure AD や IDaaS などの認証基盤を用意し、IAM 連携で認証・認可を実施する。
+
+### Blocto Wallet App の仕組みを介してマルチシグウォレットにアクセスする場合
+
+[MultiSigDApp](https://blocto.app/link?url=https://multi-sig-wallet-contract.vercel.app&blockchains=mumbai)
 
 ### 参考文献
+
 1. [Developer Portal](https://developers.flow.com/)
-2. [Blocto Wallet｜ウォレットの使い方とFlowのステーキング方法](https://dappsmarket.net/guide/blocto-howtouse/)
+2. [Blocto Wallet ｜ウォレットの使い方と Flow のステーキング方法](https://dappsmarket.net/guide/blocto-howtouse/)
 3. [Blocto Wallet](https://portto.com/)
 4. [testnet faucet](https://testnet-faucet-v2.onflow.org/)
 5. [Blocto Wallet 開発者向けドキュメント](https://docs.blocto.app/)
@@ -464,17 +479,17 @@ IAP自身には、認証・認可機能がないので、別途Azure ADやIDaaS�
 25. [Mermaid js Live Editor](https://mermaid.live/edit#pako:eNpVj80OgkAMhF-l6UkTeQEOJgLKxUQTvbEcGqjsRvcnyxJjgHd30Yv21HS-mUxHbGzLmGLnyUm4FsJAnF2VS6_6oKmvIUm2U8kBtDX8miBblRZ6aZ1Tplt_-WyBIB-PC8YQpDL3-SvlH__J8ARFdSQXrKt_levTTrCv1FnG-H9Feo6uQ3Wj9EZJQx5y8h8EN6jZa1JtrD4uF4FBsmaBaVxb8neBwsyRoyHYy8s0mAY_8AYH11LgQlH8WGMMfvQ8vwGEfFP7)
 26. [Mermaid js Tutorial](https://mermaid-js.github.io/mermaid/#/Tutorials)
 27. [dapper-contracts](https://github.com/dapperlabs/dapper-contracts)
-28. [FanTopのフロントエンド開発 − Web3におけるユーザ認証](https://techdo.mediado.jp/entry/2022/09/21/090000)
+28. [FanTop のフロントエンド開発 − Web3 におけるユーザ認証](https://techdo.mediado.jp/entry/2022/09/21/090000)
 29. [Web3-React](https://github.com/Uniswap/web3-react#readme)
 30. [MetaMask Docs](https://docs.metamask.io/guide/ethereum-provider.html#methods)
-31. [JPYCv2のメタトランザクション機能の紹介](https://zenn.dev/jpyc/articles/ff5922abf2046c)
+31. [JPYCv2 のメタトランザクション機能の紹介](https://zenn.dev/jpyc/articles/ff5922abf2046c)
 32. [「Dapper」はガス代がかからない仮想通貨ウォレット！インストール方法と特徴を解説（追記あり）](https://news.blockchaingame.jp/494#:~:text=%E6%96%B9%E3%81%AB%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1-,1.Dapper%E3%81%A8%E3%81%AF%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3%E3%82%B2%E3%83%BC%E3%83%A0%E3%81%AE%E8%AA%B2%E9%A1%8C%E7%82%B9,%E9%80%9A%E8%B2%A8%E3%82%A6%E3%82%A9%E3%83%AC%E3%83%83%E3%83%88%E3%81%AE%E3%81%93%E3%81%A8%E3%81%A7%E3%81%99%E3%80%82)
-33. [Dapperコントラクトのコードを理解する](https://qiita.com/avcdsld/items/2e97a553159e6d278b43)
+33. [Dapper コントラクトのコードを理解する](https://qiita.com/avcdsld/items/2e97a553159e6d278b43)
 34. [【Azure】クイック スタート:SMS メッセージを送信する](https://learn.microsoft.com/ja-jp/azure/communication-services/quickstarts/sms/send?tabs=windows&pivots=programming-language-javascript)
 35. [Dapper Contract 解説/Dapper Contract](https://speakerdeck.com/avcdsld/dapper-contract?slide=35)
-36. [IAPとは？VPNと比較しつつ、メリットを解説](https://solution.kamome-e.com/blog-security-20220706/)
+36. [IAP とは？VPN と比較しつつ、メリットを解説](https://solution.kamome-e.com/blog-security-20220706/)
 37. [Cloud Run で Identity-Aware Proxy (IAP) を使う](https://zenn.dev/ww24/articles/19099c85febe0d)
-38. [電話番号で本人確認を行う「SMS認証」とは？仕組みを解説](https://ekyc.nexway.co.jp/blog/26)
-38. [Node.js を使用したユーザーの認証](https://cloud.google.com/nodejs/getting-started/authenticate-users?hl=ja)
-39. [GCP + Node.js を使用したユーザーの認証のサンプルコード](https://github.com/GoogleCloudPlatform/nodejs-getting-started/blob/HEAD/authenticating-users/app.js)
-40. [Solidity by Example](https://solidity-by-example.org/)
+38. [電話番号で本人確認を行う「SMS 認証」とは？仕組みを解説](https://ekyc.nexway.co.jp/blog/26)
+39. [Node.js を使用したユーザーの認証](https://cloud.google.com/nodejs/getting-started/authenticate-users?hl=ja)
+40. [GCP + Node.js を使用したユーザーの認証のサンプルコード](https://github.com/GoogleCloudPlatform/nodejs-getting-started/blob/HEAD/authenticating-users/app.js)
+41. [Solidity by Example](https://solidity-by-example.org/)
