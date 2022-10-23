@@ -450,6 +450,31 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 
 [MultiSigDApp](https://blocto.app/link?url=https://multi-sig-wallet-contract.vercel.app&blockchains=mumbai)
 
+### QRコードでサイトインするイメージ
+
+<img src="./docs/img/qr.png">
+
+## 想定業務フロー
+
+[![](https://mermaid.ink/img/pako:eNqNlF1PE0EUhv_KZq8gwQu43AsSEyThQqORxJverO1UG9pp3W7TEELCzqiAlPARpQGLUFI-_AJjRbSt9Mec7m75F56Z3a27QIVeNDszz7xzznvOzIwazyaIqql58qJAaJyMpfRnhp6JUQV_ZspME2Vi7JHD6_bxFvB3wL8CbykDzsa37sGKu9m8KH0HawnY4oPxSeA7wOvAF8A6B-tw0BPRC2aWFjJPieGP42bWUIAfoBCwn_gfns8WaQDmdMNMxVM5nZpKfljR80oQgDyDHcmPxaswFWwkHnYKrIYf1wiPCPjuwwnBYEB8tRdQGEsKalyGOA2s7svyj8BOrpUtCv6Jnk4T8za4KfDJ7BShSj9cGqPcGR1VkhoaMQ-8LLxgtcvL5nXLYbslhYZqSriKnfPti10_c1yUzIimeIvSn3V7rQVW3Z5vgLXpgyM9EHhV-vcZ2B5WBfgXYL9xk7NVtlfO7NJGZIfMYQU4B3YGfN-eq4FV8s5yfmH_tLF_wGLAlrC73L1G99MyHorDiEokK6F4IqxjbVnsXeBrIgQx2RIRsfWLOavTrvZ15BYK9qt9-837cCjJngNJPZ0nyHTbby8bhOn2a4bOn4qzsOqU5t1aI6xYvGmLBxcD2F7Ydio7_o3EIKolsF5HgsDGwKsshVpSqO5uNpCLlnI4qLl7uup8qHSrR73ArlhGhenB3QJLlh6FWRNdU_6zJ3w3w31HQ93kL9_QebLZ_yWEqPuyZS__CFeIRs5FQmbtEQPBoAzWgT231GngEcf9jMcU3cNmt7nnbR7sk2J4ondopIdjVB1SM8TI6KkEPr4zQiimms9JhsRUDT8TujEVU2N0FrlCLqGb5F4ihY-PqskuG1LFq_p4msZVzTQKJID817tHEbnpvvfEy5d-9i-mqe40?type=png)](https://mermaid.live/edit#pako:eNqNlF1PE0EUhv_KZq8gwQu43AsSEyThQqORxJverO1UG9pp3W7TEELCzqiAlPARpQGLUFI-_AJjRbSt9Mec7m75F56Z3a27QIVeNDszz7xzznvOzIwazyaIqql58qJAaJyMpfRnhp6JUQV_ZspME2Vi7JHD6_bxFvB3wL8CbykDzsa37sGKu9m8KH0HawnY4oPxSeA7wOvAF8A6B-tw0BPRC2aWFjJPieGP42bWUIAfoBCwn_gfns8WaQDmdMNMxVM5nZpKfljR80oQgDyDHcmPxaswFWwkHnYKrIYf1wiPCPjuwwnBYEB8tRdQGEsKalyGOA2s7svyj8BOrpUtCv6Jnk4T8za4KfDJ7BShSj9cGqPcGR1VkhoaMQ-8LLxgtcvL5nXLYbslhYZqSriKnfPti10_c1yUzIimeIvSn3V7rQVW3Z5vgLXpgyM9EHhV-vcZ2B5WBfgXYL9xk7NVtlfO7NJGZIfMYQU4B3YGfN-eq4FV8s5yfmH_tLF_wGLAlrC73L1G99MyHorDiEokK6F4IqxjbVnsXeBrIgQx2RIRsfWLOavTrvZ15BYK9qt9-837cCjJngNJPZ0nyHTbby8bhOn2a4bOn4qzsOqU5t1aI6xYvGmLBxcD2F7Ydio7_o3EIKolsF5HgsDGwKsshVpSqO5uNpCLlnI4qLl7uup8qHSrR73ArlhGhenB3QJLlh6FWRNdU_6zJ3w3w31HQ93kL9_QebLZ_yWEqPuyZS__CFeIRs5FQmbtEQPBoAzWgT231GngEcf9jMcU3cNmt7nnbR7sk2J4ondopIdjVB1SM8TI6KkEPr4zQiimms9JhsRUDT8TujEVU2N0FrlCLqGb5F4ihY-PqskuG1LFq_p4msZVzTQKJID817tHEbnpvvfEy5d-9i-mqe40)
+
+
+## 東京Web3ハッカソンで開発予定の機能一覧
+
+| 機能名                 | 説明                                                                                                     |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- |
+| Connect Wallet 機能    | 患者と医療従事者の両方が、自分のウォレットをアプリケーションに接続できる                                 |
+| 医療データ閲覧機能     | 患者は、アプリケーションのダッシュボードで、自分の秘密鍵を使って、自分の医療データを閲覧することができる |
+| 医療データ新規登録機能 | 患者のデータを医者が新規に追加する                                                                       |
+| アクセス許可提供機能   | 医療提供者に自分の医療データへのアクセスを提供する機能                                                   |
+| 編集権限承認要求機能   | 患者の医療データを編集する際、患者に承認を求める機能                                                     |
+| 医療データ編集機能     | 医療従事者はその患者の医療データを編集する機能                                                           |
+| 閲覧権限変更機能       | 医療データへのアクセス権限を一度承認した医療提供者から再度制限できる機能                                 |
+| 医師情報登録機能       | 医者の情報を新たに登録できる機能                                                                         |
+| 医師情報確認機能       | 医者又は患者が医師の情報を確認できる機能                                                                 |
+| 治療費支払い機能       | 患者が医者に治療費を支払う機能                                                                           |
+| 治療費受け取り機能     | 医者が治療費を受け取る機能                                                                               |
+
 ### 参考文献
 
 1. [Developer Portal](https://developers.flow.com/)

@@ -44,7 +44,14 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 /**
  * Txsコンポーネント
  */
-const Txs = () => {
+const Txs = (props) => {
+
+    const { 
+        provider,
+        blocto,
+        signer
+    } = props;
+
     // コントラクト用のステート変数
     const [contract, setContract] = useState(null); 
     // アカウント用のステート変数
@@ -75,8 +82,6 @@ const Txs = () => {
     const [page, setPage] = useState(0);
     // 1ページに表示する上限数
     const [rowsPerPage, setRowsPerPage] = useState(10);
-    const [provider, setProvider] = useState(null);
-    const [blocto, setBlocto] = useState(null);
     // locationを使うための変数
     const location = useLocation();
 
@@ -86,14 +91,10 @@ const Txs = () => {
     const init = async() => {
         // locationから取得する。
         const addr = location.state.addr;
-        const web3Provider = location.state.provider;
-        const signer = location.state.signer;
-        const bloctoSDK = location.state.blocto;
-
-        console.log("web3provider:", web3Provider)
+        console.log("web3provider:", provider)
 
         try { 
-            const instance = new web3Provider.eth.Contract(walletContract.abi, addr);
+            const instance = new provider.eth.Contract(walletContract.abi, addr);
             // トランザクションの情報を取得する。
             const transactions = await instance.methods.getTxs().call();
             // コントラクトとアカウントの情報をステート変数に格納する。
@@ -101,8 +102,6 @@ const Txs = () => {
             setAccount(signer);
             setWallet(addr);
             setTxs(transactions);
-            setProvider(web3Provider);
-            setBlocto(bloctoSDK);
         } catch (error) {
             alert(`Failed to load web3, accounts, or contract. Check console for details.`,);
             console.error(error);
