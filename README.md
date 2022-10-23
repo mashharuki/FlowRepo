@@ -519,3 +519,4 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 40. [GCP + Node.js を使用したユーザーの認証のサンプルコード](https://github.com/GoogleCloudPlatform/nodejs-getting-started/blob/HEAD/authenticating-users/app.js)
 41. [Solidity by Example](https://solidity-by-example.org/)
 42. [Twilio の Quick Start (SMS)](https://www.twilio.com/ja/docs/verify/quickstarts/node-express#)
+43. [Iroha React App](https://github.com/mashharuki/iroha)
