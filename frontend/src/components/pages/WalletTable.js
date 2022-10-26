@@ -27,10 +27,7 @@ const WalletTable = (props) => {
 
     // トランザクション一覧画面に渡す要素
     const toTx = {
-        addr: _wallet,
-        provider: provider,
-        signer: signer,
-        blocto: blocto,
+        addr: addr,
     };
 
     /**

@@ -483,7 +483,7 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 |No.|変数名|概要|型|
 |---|---|---|---|
 |1|userId|メールアドレスをハッシュ化したもの|string|
-|2|openseaLink|openseaまでのURL|string|
+|2|DIDLink|DIDまでのURL|string|
 
 ### 参考文献
 

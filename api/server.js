@@ -129,7 +129,7 @@ const utils = require('./Utils');
     const methodName = "setGreeting";
     // 引数
     //const args = req.query.args;
-    const args = ["Sign offline2"];
+    const args = ["Sign offline3"];
     // チェーンID
     //const chainId = req.query.chainId;
     const chainId = 43113;
