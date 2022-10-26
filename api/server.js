@@ -2,6 +2,16 @@
  * APIサーバー設定ファイル
  */
 
+require('dotenv').config()
+// get Mnemonic code
+const {
+  MNEMONIC,
+  TWILIO_ACCOUNT_SID,
+  TWILIO_AUTH_TOKEN,
+  TWILIO_SERVICE_SID,
+  TWILIO_USER_NAME
+} = process.env
+
 // Webサーバーの起動
 const express = require('express');
 var log4js = require('log4js');
@@ -22,14 +32,13 @@ app.listen(portNo, () => {
 let exec = require('child_process').exec;
 // 暗号化用のモジュールを読み込む
 const crypto = require('crypto');
+
+// create twilio object
+const accountSid = TWILIO_ACCOUNT_SID;
+const authToken = TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 // ブロックチェーン機能のモジュールを読み込む
 const utils = require('./Utils');
-
-
-// get Mnemonic code
-const {
-  MNEMONIC
-} = process.env
 
 // APIの定義
 
@@ -236,61 +245,22 @@ app.get('/api/test2', async(req, res) => {
 }); 
 
 /**
- * 新規会員情報を挿入するためのAPI
+ * テスト用のAPI3
  */
-app.get('/api/input', (req, res) => {
-    // パラメータから値を取得する。
-    let domain = req.query.domain;
-    let accountId = req.query.accountId;
-    let name = req.query.name;
-    let kana = req.query.kana;
-    let tel = req.query.tel;
-    let addr = req.query.adds;
-    let bd = req.query.bd;
-    let ed = req.query.ed;
-    let password = req.query.password;
+app.get('/api/test3', (req, res) => {
+
     // パスワードのハッシュ値を取得する。
-    let passHash = crypto.createHash('sha256').update(password).digest('hex');
-    // ブロック高用の変数を用意する。
-    let block = 0;
-    // 公開鍵を取得する。
-    let publicKey = Keycreate.Keycreate(accountId, domain);
+    let passHash = crypto.createHash('sha256').update("test").digest('hex');
 
-    // アカウント作成用のコマンドを作成
-    let COMMAND = ['node ./server/iroha/call/CreateAccountCall.js', domain, accountId, publicKey];
-    COMMAND = COMMAND.join(' ');
-    logger.debug('Execute COMMAND=', COMMAND);
-
-    // コマンドを実行する。
-    exec( COMMAND , function(error, stdout, stderr) {
-        if (error !== null) {                
-            logger.error('exec error: ' + error);
-            res.status(500).send("トランザクション作成中にエラーが発生しました");
-            return
-        }
-        logger.debug(stdout)
-        //ブロック位置を取得
-        if (stdout.match(/height: (\d+),/) !== null){
-            block = stdout.match(/height: (\d+),/)[1];
-            logger.debug("block:", block);
-        } else {
-            //キーファイルより公開鍵を取得
-            block = (2^64)+1
-        }
-        // 実行するSQL
-        const query = 'INSERT INTO kaiin_info (id,name,kana,addr,tel,bd,ed,block,password) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)';
-        // パラメータ用の配列を作成する。
-        const values = [ accountId + '@' + domain, name, kana, addr, tel, bd, ed, block, passHash ];
-        // DBの実行
-        pgHelper.execute(database1, query, values, (err, docs) => {
-            if (err) {
-                logger.error(err.toString());
-                res.status(501).send("DB接続中にエラーが発生しました");
-                return;
-            }
-            // res.json({ roles: docs.rows });
-        });
-    });
+    client.messages
+      .create({
+        body: passHash,
+        messagingServiceSid: TWILIO_SERVICE_SID,
+        to: '+817085680356'
+      })
+      .then((message) => logger.log(message.sid));
+    
+    res.json({ result: "SMS success!!" });
 });
 
 
