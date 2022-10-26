@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-10-23T08:48:08.201Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="r94UX9sDotuwWMqUzo0h" version="20.4.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-10-26T12:26:49.023Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="JHjLVmY8wy6jMatggw_J" version="20.5.1" type="github" pages="2">
   <diagram id="AgBQlWnoEHxcCPggjtpq" name="system image">
-    <mxGraphModel dx="2886" dy="895" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2432" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -86,10 +86,10 @@
           <mxGeometry x="-1010" y="160" width="315" height="130" as="geometry" />
         </mxCell>
         <mxCell id="dcwnCk_z-_zCKresFfaK-21" value="・複数人で供用して利用することが&lt;br&gt;　できるウォレット&lt;br&gt;・利用には事前に円のdepositを行う。&lt;br&gt;・メールアドレスは、ハッシュ化して&lt;br&gt;　登録&lt;br&gt;&amp;nbsp; &amp;nbsp;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.63;base=30;align=left;" parent="1" vertex="1">
-          <mxGeometry x="-530" y="121" width="250" height="141.5" as="geometry" />
+          <mxGeometry x="-530" y="148.5" width="250" height="141.5" as="geometry" />
         </mxCell>
-        <mxCell id="dcwnCk_z-_zCKresFfaK-22" value="・ownerやマルチシグ機能の管理&lt;br&gt;・利用上限額とIDを紐づけて&lt;br&gt;　管理する&lt;br&gt;・利用上限の他、データとの紐付&lt;br&gt;&amp;nbsp; &amp;nbsp;け管理できるようにする" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.22;base=30;align=left;" parent="1" vertex="1">
-          <mxGeometry x="-228" y="133" width="214" height="131.5" as="geometry" />
+        <mxCell id="dcwnCk_z-_zCKresFfaK-22" value="・ownerやマルチシグ機能の管理&lt;br&gt;・利用上限額とIDを紐づけて&lt;br&gt;　管理する&lt;br&gt;・利用上限の他、データとの紐付&lt;br&gt;&amp;nbsp; &amp;nbsp;け管理できるようにする&lt;br&gt;・DIDを保有する" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.3;base=30;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-236" y="160" width="214" height="131.5" as="geometry" />
         </mxCell>
         <mxCell id="dcwnCk_z-_zCKresFfaK-23" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -114,34 +114,34 @@
         <mxCell id="dcwnCk_z-_zCKresFfaK-27" value="ユーザー" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#330000;" parent="1" vertex="1">
           <mxGeometry x="-870" y="460" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-1" value="API&lt;br&gt;サーバー" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="-570" y="282" width="80" height="80" as="geometry" />
+        <mxCell id="E8tvALSOYSs34_R2YsZq-1" value="API&lt;br&gt;サーバー" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="-560" y="397.5" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-2" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;" edge="1" parent="1">
+        <mxCell id="E8tvALSOYSs34_R2YsZq-2" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-642" y="310" as="sourcePoint" />
-            <mxPoint x="-582" y="310" as="targetPoint" />
+            <mxPoint x="-475" y="423" as="sourcePoint" />
+            <mxPoint x="-415" y="423" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="-642" y="310" />
+              <mxPoint x="-475" y="423" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-3" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;" edge="1" parent="1">
+        <mxCell id="E8tvALSOYSs34_R2YsZq-3" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-582" y="340" as="sourcePoint" />
-            <mxPoint x="-642" y="340" as="targetPoint" />
+            <mxPoint x="-415" y="453" as="sourcePoint" />
+            <mxPoint x="-475" y="453" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="-582" y="340" />
+              <mxPoint x="-415" y="453" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-4" value="呼び出しや秘密鍵は&lt;br&gt;ここに格納する。" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.92;base=30;align=left;" vertex="1" parent="1">
-          <mxGeometry x="-670" y="200" width="130" height="101.5" as="geometry" />
+        <mxCell id="E8tvALSOYSs34_R2YsZq-4" value="呼び出しや秘密鍵は&lt;br&gt;ここに格納する。" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.92;base=30;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-660" y="319.25" width="130" height="101.5" as="geometry" />
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-5" value="Token&lt;br&gt;コントラクト" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="E8tvALSOYSs34_R2YsZq-5" value="Token&lt;br&gt;コントラクト" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="-410" y="390" width="97" height="97" as="geometry" />
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-6" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;entryX=-0.021;entryY=0.918;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="dcwnCk_z-_zCKresFfaK-13">
+        <mxCell id="E8tvALSOYSs34_R2YsZq-6" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;entryX=-0.021;entryY=0.918;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="dcwnCk_z-_zCKresFfaK-13" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-300" y="423" as="sourcePoint" />
             <mxPoint x="-240" y="423" as="targetPoint" />
@@ -150,7 +150,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-7" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="E8tvALSOYSs34_R2YsZq-5">
+        <mxCell id="E8tvALSOYSs34_R2YsZq-7" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontColor=#330000;width=10;endSize=6.67;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" target="E8tvALSOYSs34_R2YsZq-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-220" y="380" as="sourcePoint" />
             <mxPoint x="-280" y="380" as="targetPoint" />
@@ -159,14 +159,14 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="E8tvALSOYSs34_R2YsZq-8" value="・トークンMint&lt;br&gt;・トークン burn&lt;br&gt;&lt;br&gt;・トークンは見せたりすることで&lt;br&gt;&amp;nbsp; &amp;nbsp; Mintが完了する。&lt;br&gt;　→ 使う時はAPIサーバーを呼び出す形になる。&amp;nbsp;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.56;base=30;align=left;" vertex="1" parent="1">
-          <mxGeometry x="-410" y="500" width="360" height="160" as="geometry" />
+        <mxCell id="E8tvALSOYSs34_R2YsZq-8" value="・トークンMint&lt;br&gt;・トークン burn&lt;br&gt;&lt;br&gt;・トークンは見せたりすることで&lt;br&gt;&amp;nbsp; &amp;nbsp; Mintが完了する。&lt;br&gt;　→ 使う時はAPIサーバーを呼び出す形になる。&amp;nbsp;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.67;base=30;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-382" y="504.5" width="360" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
-    <mxGraphModel dx="1865" dy="974" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1647" dy="863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -298,7 +298,7 @@
         <mxCell id="39" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" parent="4" source="33" target="38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="freEy0QqXK680ft02RsR-41" value="process&#xa;command" style="" vertex="1" parent="4">
+        <mxCell id="freEy0QqXK680ft02RsR-41" value="process&#xa;command" style="" parent="4" vertex="1">
           <mxGeometry x="85" y="112" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="20" value="" style="endArrow=open;strokeColor=#FF0000;endFill=1;rounded=0" parent="1" source="10" target="18" edge="1">
