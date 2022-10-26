@@ -542,3 +542,4 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 53. [Web3js 公式サイト](https://web3js.org/)
 54. [Signing Raw Transactions](https://docs.etherscan.io/tutorials/signing-raw-transactions)
 55. [ethers.jsを使ってMetaMaskで署名してNode.jsで検証する方法](https://zenn.dev/tatsuyasusukida/articles/how-to-sign-and-verify-ethersjs)
+56. [Twilio(トゥイリオ) Verify API](https://www.twilio.com/docs/verify/api)
