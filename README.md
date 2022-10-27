@@ -446,6 +446,10 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 - 認証基盤連携  
   IAP 自身には、認証・認可機能がないので、別途 Azure AD や IDaaS などの認証基盤を用意し、IAM 連携で認証・認可を実施する。
 
+### Ceramic Networkとは
+
+Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデータネットワークプロトコルのこと。
+
 ### Blocto Wallet App の仕組みを介してマルチシグウォレットにアクセスする場合
 
 [MultiSigDApp](https://blocto.app/link?url=https://multi-sig-wallet-contract.vercel.app&blockchains=mumbai)
@@ -458,6 +462,27 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 
 [![](https://mermaid.ink/img/pako:eNqNlF1PE0EUhv_KZq8gwQu43AsSEyThQqORxJverO1UG9pp3W7TEELCzqiAlPARpQGLUFI-_AJjRbSt9Mec7m75F56Z3a27QIVeNDszz7xzznvOzIwazyaIqql58qJAaJyMpfRnhp6JUQV_ZspME2Vi7JHD6_bxFvB3wL8CbykDzsa37sGKu9m8KH0HawnY4oPxSeA7wOvAF8A6B-tw0BPRC2aWFjJPieGP42bWUIAfoBCwn_gfns8WaQDmdMNMxVM5nZpKfljR80oQgDyDHcmPxaswFWwkHnYKrIYf1wiPCPjuwwnBYEB8tRdQGEsKalyGOA2s7svyj8BOrpUtCv6Jnk4T8za4KfDJ7BShSj9cGqPcGR1VkhoaMQ-8LLxgtcvL5nXLYbslhYZqSriKnfPti10_c1yUzIimeIvSn3V7rQVW3Z5vgLXpgyM9EHhV-vcZ2B5WBfgXYL9xk7NVtlfO7NJGZIfMYQU4B3YGfN-eq4FV8s5yfmH_tLF_wGLAlrC73L1G99MyHorDiEokK6F4IqxjbVnsXeBrIgQx2RIRsfWLOavTrvZ15BYK9qt9-837cCjJngNJPZ0nyHTbby8bhOn2a4bOn4qzsOqU5t1aI6xYvGmLBxcD2F7Ydio7_o3EIKolsF5HgsDGwKsshVpSqO5uNpCLlnI4qLl7uup8qHSrR73ArlhGhenB3QJLlh6FWRNdU_6zJ3w3w31HQ93kL9_QebLZ_yWEqPuyZS__CFeIRs5FQmbtEQPBoAzWgT231GngEcf9jMcU3cNmt7nnbR7sk2J4ondopIdjVB1SM8TI6KkEPr4zQiimms9JhsRUDT8TujEVU2N0FrlCLqGb5F4ihY-PqskuG1LFq_p4msZVzTQKJID817tHEbnpvvfEy5d-9i-mqe40?type=png)](https://mermaid.live/edit#pako:eNqNlF1PE0EUhv_KZq8gwQu43AsSEyThQqORxJverO1UG9pp3W7TEELCzqiAlPARpQGLUFI-_AJjRbSt9Mec7m75F56Z3a27QIVeNDszz7xzznvOzIwazyaIqql58qJAaJyMpfRnhp6JUQV_ZspME2Vi7JHD6_bxFvB3wL8CbykDzsa37sGKu9m8KH0HawnY4oPxSeA7wOvAF8A6B-tw0BPRC2aWFjJPieGP42bWUIAfoBCwn_gfns8WaQDmdMNMxVM5nZpKfljR80oQgDyDHcmPxaswFWwkHnYKrIYf1wiPCPjuwwnBYEB8tRdQGEsKalyGOA2s7svyj8BOrpUtCv6Jnk4T8za4KfDJ7BShSj9cGqPcGR1VkhoaMQ-8LLxgtcvL5nXLYbslhYZqSriKnfPti10_c1yUzIimeIvSn3V7rQVW3Z5vgLXpgyM9EHhV-vcZ2B5WBfgXYL9xk7NVtlfO7NJGZIfMYQU4B3YGfN-eq4FV8s5yfmH_tLF_wGLAlrC73L1G99MyHorDiEokK6F4IqxjbVnsXeBrIgQx2RIRsfWLOavTrvZ15BYK9qt9-837cCjJngNJPZ0nyHTbby8bhOn2a4bOn4qzsOqU5t1aI6xYvGmLBxcD2F7Ydio7_o3EIKolsF5HgsDGwKsshVpSqO5uNpCLlnI4qLl7uup8qHSrR73ArlhGhenB3QJLlh6FWRNdU_6zJ3w3w31HQ93kL9_QebLZ_yWEqPuyZS__CFeIRs5FQmbtEQPBoAzWgT231GngEcf9jMcU3cNmt7nnbR7sk2J4ondopIdjVB1SM8TI6KkEPr4zQiimms9JhsRUDT8TujEVU2N0FrlCLqGb5F4ihY-PqskuG1LFq_p4msZVzTQKJID817tHEbnpvvfEy5d-9i-mqe40)
 
+## DIDの例
+
+```json
+{
+  "@context": "https://www.w3.org/ns/did/v1",
+  "id": "did:example:123456789abcdefghi",
+  "authentication": [{
+    // used to authenticate as did:...fghi
+    "id": "did:example:123456789abcdefghi#keys-1",
+    "type": "RsaVerificationKey2018",
+    "controller": "did:example:123456789abcdefghi",
+    "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+  }],
+  "service": [{
+    // used to retrieve Verifiable Credentials associated with the DID
+    "id":"did:example:123456789abcdefghi#vcs",
+    "type": "VerifiableCredentialService",
+    "serviceEndpoint": "https://example.com/vc/"
+  }]
+}
+```
 
 ## 東京Web3ハッカソンで開発予定の機能一覧
 
@@ -544,3 +569,7 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 54. [Signing Raw Transactions](https://docs.etherscan.io/tutorials/signing-raw-transactions)
 55. [ethers.jsを使ってMetaMaskで署名してNode.jsで検証する方法](https://zenn.dev/tatsuyasusukida/articles/how-to-sign-and-verify-ethersjs)
 56. [Twilio(トゥイリオ) Verify API](https://www.twilio.com/docs/verify/api)
+57. [Web3.0とDIDとは](https://lastrust.io/2020/06/05/whatis-did-web3/)
+58. [uPort: DID(Decentralized Identity)におけるユーザ認証について](https://qiita.com/tomohata/items/e720ec4408d1db24cee2)
+59. [ceramic.network](https://ceramic.network/)
+60. [Ceramic Networkとは？](https://mirror.xyz/kantaro.eth/v3z1YU1eNSCxwNfsynxRF_ef1RTBvQWFc9KCZaiWCsk)
