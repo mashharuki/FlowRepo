@@ -14,7 +14,16 @@ import './../../assets/css/App.css';
 const WalletTable = (props) => {
 
     // propsから引数を取得する。
-    const { _wallet, _columns, row, index, depositAction, provider, signer, blocto } = props;
+    const { 
+        _wallet, 
+        _columns, 
+        row, 
+        index, 
+        depositAction, 
+        provider, 
+        signer, 
+        blocto 
+    } = props;
 
     // ウォレットの名前を格納するステート変数
     const [name, setName] = useState(null); 
