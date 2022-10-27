@@ -32,6 +32,7 @@ app.listen(portNo, () => {
 let exec = require('child_process').exec;
 // 暗号化用のモジュールを読み込む
 const crypto = require('crypto');
+const ION = require('@decentralized-identity/ion-tools')
 
 // create twilio object
 const accountSid = TWILIO_ACCOUNT_SID;
@@ -263,6 +264,47 @@ app.get('/api/test3', (req, res) => {
     res.json({ result: "SMS success!!" });
 });
 
+/**
+ * テスト用のAPI4
+ */
+app.get('/api/test4', async(req, res) => {
+  let authnKeys = await ION.generateKeyPair();
+  let did = new ION.DID({
+    content: {
+      publicKeys: [
+        {
+          id: 'key-1',
+          type: 'EcdsaSecp256k1VerificationKey2019',
+          publicKeyJwk: authnKeys.publicJwk,
+          purposes: [ 'authentication' ]
+        }
+      ],
+      services: [
+        {
+          id: 'domain-1',
+          type: 'LinkedDomains',
+          serviceEndpoint: 'https://foo.example.com'
+        }
+      ]
+    }
+  });
+  // get URI 
+  let longFormURI = await did.getURI();
+  let shortFormURI = await did.getURI('short');
+
+  logger.log("URI:", longFormURI)
+  logger.log("short URI:", shortFormURI)
+
+  // resolve 
+  const response = await ION.resolve(longFormURI);
+  logger.log("response:", response)
+
+  const requestBody = await did.generateRequest();
+  const request = new ION.AnchorRequest(requestBody);
+  let response2 = await request.submit();
+
+  res.json({ DID : response2 });
+});
 
 // 静的ファイルを自動的に返すようルーティングする。
 app.use('/', express.static('./build'));

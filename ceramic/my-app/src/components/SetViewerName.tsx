@@ -14,7 +14,7 @@ function SetViewerName() {
     const merge = async (record?: any) => {
         // merge
         await record.merge({ 
-            name: 'Haruki',
+            name: 'Haruki2',
             description: 'This is a test DID'
         })
     }

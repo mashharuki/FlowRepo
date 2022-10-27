@@ -484,6 +484,56 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 }
 ```
 
+### ION.jsで生成したDIDデータ
+
+```json
+{
+  "DID":
+    {
+      "@context":"https://w3id.org/did-resolution/v1",
+      "didDocument":      
+        {
+          "id":"did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19",
+          "@context":[
+            "https://www.w3.org/ns/did/v1",
+            {
+              "@base":"did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19"
+            }
+          ],
+          "service":[
+            {
+              "id":"#domain-1",
+              "type":"LinkedDomains",
+              "serviceEndpoint":"https://foo.example.com"
+            }
+          ],
+          "verificationMethod":
+          [
+            {
+              "id":"#key-1","controller":"did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19",
+              "type":"EcdsaSecp256k1VerificationKey2019",
+              "publicKeyJwk":
+                {
+                  "crv":"secp256k1",
+                  "kty":"EC",
+                  "x":"eE2tW65MdPAIrgREf3W98Np_Jxa5TnbBcD4CGEzXN6M","y":"ZrSWr5tHLhg7KeiyUdPI2bngpwq9HhtKNp3TnmR-ft4"
+                }
+              }
+            ],
+            "authentication":["#key-1"]
+          },
+          "didDocumentMetadata":
+          {
+            "method":{
+              "published":false,
+              "recoveryCommitment":"EiDyfSU5vetN10s5CYEH8CCNWPO7zTt-28tMfvmTmhOyoQ","updateCommitment":"EiChQ6DHQzvK3fJxqEHaMzaz1iXfDkb5K1RRqM9Ecea_LA"
+            },
+          "equivalentId":["did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg"]
+          }
+        }
+}
+```
+
 ## 東京Web3ハッカソンで開発予定の機能一覧
 
 | 機能名                 | 説明                                                                                                     |
@@ -508,8 +558,7 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 |No.|変数名|概要|型|
 |---|---|---|---|
 |1|userId|メールアドレスをハッシュ化したもの|string|
-|2|DIDLink|DIDまでのURL|string|
-|3|secretWord|DIDアクセスまでの合言葉|string|
+|2|secretWord|DIDアクセスまでの合言葉|string|
 
 ### 参考文献
 
@@ -573,3 +622,5 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 58. [uPort: DID(Decentralized Identity)におけるユーザ認証について](https://qiita.com/tomohata/items/e720ec4408d1db24cee2)
 59. [ceramic.network](https://ceramic.network/)
 60. [Ceramic Networkとは？](https://mirror.xyz/kantaro.eth/v3z1YU1eNSCxwNfsynxRF_ef1RTBvQWFc9KCZaiWCsk)
+61. [「ION」Microsoftが主導する分散型デジタルIDシステム](https://gaiax-blockchain.com/microsoft-ion)
+62. [ION tools](https://github.com/decentralized-identity/ion-tools)

@@ -8,6 +8,10 @@ declare global {
   interface Window { 
     ethereum: any; 
   }
+
+  interface Blocto { 
+    ethereum: any; 
+  }
 }
 
 const root = ReactDOM.createRoot(

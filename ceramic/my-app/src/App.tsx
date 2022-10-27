@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Provider } from '@self.id/framework'
+import { Provider } from '@self.id/framework';
 import ConnectButton from './components/ConnectButton';
 
 /**
@@ -9,6 +9,7 @@ import ConnectButton from './components/ConnectButton';
  * @returns 
  */
 function App() {
+  
   return (
     <Provider client={{ ceramic: 'testnet-clay' }}>
       <div className="App">
