@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-10-26T12:26:49.023Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="JHjLVmY8wy6jMatggw_J" version="20.5.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-10-27T01:59:04.172Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="mfqy_H8dLztgmvKhaHEV" version="20.5.1" type="github" pages="2">
   <diagram id="AgBQlWnoEHxcCPggjtpq" name="system image">
-    <mxGraphModel dx="2432" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2769" dy="909" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -85,7 +85,7 @@
         <mxCell id="dcwnCk_z-_zCKresFfaK-20" value="・QRコードでイン&lt;br&gt;・基本的にはシンプルなボタン操作&lt;br&gt;・登録済みの場合は、トークンを表示する。&lt;br&gt;・シンプルだがNFTのミント機能もつけてみる？" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.91;base=30;align=left;" parent="1" vertex="1">
           <mxGeometry x="-1010" y="160" width="315" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="dcwnCk_z-_zCKresFfaK-21" value="・複数人で供用して利用することが&lt;br&gt;　できるウォレット&lt;br&gt;・利用には事前に円のdepositを行う。&lt;br&gt;・メールアドレスは、ハッシュ化して&lt;br&gt;　登録&lt;br&gt;&amp;nbsp; &amp;nbsp;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.63;base=30;align=left;" parent="1" vertex="1">
+        <mxCell id="dcwnCk_z-_zCKresFfaK-21" value="・複数人で供用して利用することが&lt;br&gt;　できるウォレット&lt;br&gt;・利用には事前に円のdepositを行う。&lt;br&gt;・メールアドレスは、ハッシュ化して&lt;br&gt;　登録&lt;br&gt;・MySoulの登録機能を追加する。&lt;br&gt;&amp;nbsp; &amp;nbsp;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.63;base=30;align=left;" parent="1" vertex="1">
           <mxGeometry x="-530" y="148.5" width="250" height="141.5" as="geometry" />
         </mxCell>
         <mxCell id="dcwnCk_z-_zCKresFfaK-22" value="・ownerやマルチシグ機能の管理&lt;br&gt;・利用上限額とIDを紐づけて&lt;br&gt;　管理する&lt;br&gt;・利用上限の他、データとの紐付&lt;br&gt;&amp;nbsp; &amp;nbsp;け管理できるようにする&lt;br&gt;・DIDを保有する" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0.3;base=30;align=left;" parent="1" vertex="1">
