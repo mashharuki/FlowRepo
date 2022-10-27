@@ -1,5 +1,7 @@
 import { useViewerConnection } from '@self.id/framework';
 import { EthereumAuthProvider } from '@ceramicnetwork/blockchain-utils-linking';
+import ShowViewerName from './ShowViewerName';
+import SetViewerName from './SetViewerName';
 
 /**
  * ConnectButton
@@ -9,12 +11,16 @@ function ConnectButton() {
   const [connection, connect, disconnect] = useViewerConnection()
 
   return connection.status === 'connected' ? (
-    <button
-      onClick={() => {
-        disconnect()
-      }}>
-      Disconnect ({connection.selfID.id})
-    </button>
+    <>
+        <button
+        onClick={() => {
+            disconnect()
+        }}>
+            Disconnect ({connection.selfID.id})
+        </button>
+        <ShowViewerName/>
+        <SetViewerName/>
+    </>
   ) : 'ethereum' in window ? (
     <button
       disabled={connection.status === 'connecting'}
