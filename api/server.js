@@ -242,7 +242,7 @@ app.post('/api/mintIDQ', async(req, res) => {
   var contract = new ethers.Contract(address, abi, await provider.getSigner(wallet.address));
 
   // call send Tx function
-  var result = await utils.sendTx(logger, abi, address, "mint", ["0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", 1000], 'https://api.avax-test.network/ext/bc/C/rpc', chainId);
+  var result = await utils.sendTx(logger, abi, address, "mint", ["0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", 10000000000000000000], 'https://api.avax-test.network/ext/bc/C/rpc', chainId);
 
   if(result == true) {
       logger.debug("トランザクション送信成功");
@@ -277,7 +277,7 @@ app.post('/api/burnIDQ', async(req, res) => {
   var contract = new ethers.Contract(address, abi, await provider.getSigner(wallet.address));
 
   // call send Tx function
-  var result = await utils.sendTx(logger, abi, address, "burnFrom", ["0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", 1000], 'https://api.avax-test.network/ext/bc/C/rpc', chainId);
+  var result = await utils.sendTx(logger, abi, address, "burnFrom", ["0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", 10000000000000000000], 'https://api.avax-test.network/ext/bc/C/rpc', chainId);
 
   if(result == true) {
       logger.debug("トランザクション送信成功");
