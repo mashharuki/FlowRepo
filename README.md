@@ -624,3 +624,6 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 60. [Ceramic Networkとは？](https://mirror.xyz/kantaro.eth/v3z1YU1eNSCxwNfsynxRF_ef1RTBvQWFc9KCZaiWCsk)
 61. [「ION」Microsoftが主導する分散型デジタルIDシステム](https://gaiax-blockchain.com/microsoft-ion)
 62. [ION tools](https://github.com/decentralized-identity/ion-tools)
+63. [Tutorial: How to create a DID on the ION network](https://medium.com/@a.a.lechner/tutorial-how-to-create-a-did-on-the-ion-network-d4b8ebca280a)
+64. [DIF Universal Resolver](https://dev.uniresolver.io/)
+65. [ION Explorer](https://identity.foundation/ion/explorer/)

@@ -28,8 +28,6 @@ app.listen(portNo, () => {
     logger.debug('起動しました', `https://localhost:${portNo}`)
 });
 
-// 外部プロセス呼び出し用に使用する。
-let exec = require('child_process').exec;
 // 暗号化用のモジュールを読み込む
 const crypto = require('crypto');
 const ION = require('@decentralized-identity/ion-tools')
@@ -257,7 +255,7 @@ app.get('/api/test3', (req, res) => {
       .create({
         body: passHash,
         messagingServiceSid: TWILIO_SERVICE_SID,
-        to: '+817085680356'
+        to: 'YourPhoneNumber'
       })
       .then((message) => logger.log(message.sid));
     
@@ -265,7 +263,7 @@ app.get('/api/test3', (req, res) => {
 });
 
 /**
- * テスト用のAPI4
+ * テスト用のAPI
  */
 app.get('/api/test4', async(req, res) => {
   let authnKeys = await ION.generateKeyPair();
@@ -303,7 +301,135 @@ app.get('/api/test4', async(req, res) => {
   const request = new ION.AnchorRequest(requestBody);
   let response2 = await request.submit();
 
+  let authnKeys2 = await ION.generateKeyPair();
+
+  // UPDATE EXAMPLE
+  let updateOperation = await did.generateOperation('update', {
+    removePublicKeys: ["key-1"],
+    addPublicKeys: [
+      {
+        id: 'key-2',
+        type: 'EcdsaSecp256k1VerificationKey2019',
+        publicKeyJwk: authnKeys2.publicJwk,
+        purposes: [ 'authentication' ]
+      }
+    ],
+    removeServices: ["some-service-1"],
+    addServices: [{
+      "id": "some-service-2",
+      "type": "SomeServiceType",
+      "serviceEndpoint": "http://www.example.com"
+    }]
+  });
+
+  logger.log("updateOperation:", updateOperation)
+
+  // RECOVERY EXAMPLE
+  let authnKeys3 = await ION.generateKeyPair();
+  let recoverOperation = await did.generateOperation('recover', {
+    removePublicKeys: ["key-2"],
+    addPublicKeys: [
+      {
+        id: 'key-3',
+        type: 'EcdsaSecp256k1VerificationKey2019',
+        publicKeyJwk: authnKeys3.publicJwk,
+        purposes: [ 'authentication' ]
+      }
+    ],
+    removeServices: ["some-service-2"],
+    addServices: [{
+      "id": "some-service-3",
+      "type": "SomeServiceType",
+      "serviceEndpoint": "http://www.example.com"
+    }]
+  });
+
+  logger.log("recoverOperation:", recoverOperation)
+
+  // DEACTIVATE EXAMPLE
+  let deactivateOperation = await did.generateOperation('deactivate');
+
+  logger.log("deactivateOperation:", deactivateOperation)
+
   res.json({ DID : response2 });
+});
+
+/**
+ * DIDを作成するAPI
+ */
+app.get('/api/create', async(req, res) => {
+  let authnKeys = await ION.generateKeyPair();
+  let did = new ION.DID({
+    content: {
+      publicKeys: [
+        {
+          id: 'key-1',
+          type: 'EcdsaSecp256k1VerificationKey2019',
+          publicKeyJwk: authnKeys.publicJwk,
+          purposes: [ 'authentication' ]
+        }
+      ],
+      services: [
+        {
+          id: 'domain-1',
+          type: 'LinkedDomains',
+          serviceEndpoint: 'https://foo.example.com'
+        }
+      ]
+    }
+  });
+
+  const requestBody = await did.generateRequest();
+  const request = new ION.AnchorRequest(requestBody);
+  let response = await request.submit();
+  logger.log("response:", response)
+
+  res.json({ DID : await did.getURI() });
+});
+
+
+/**
+ * DIDドキュメントを検索するAPI
+ */
+app.get('/api/resolve', async(req, res) => {
+  var uri = req.query.uri;
+  // resolve
+  const response = await ION.resolve(uri);
+  logger.log("response:", response);
+
+  res.json({ result : response });
+});
+
+/**
+ * DIDを利用して署名処理するAPI
+ */
+app.post('/api/sign', async(req, res) => {
+  /*
+  const privateKey = JSON.parse(await fs.readFile('privateKey.json'))
+  const myData = 'This message is signed and cannot be tampered with'
+  const signature = await ION.signJws({
+    payload: myData,
+    privateJwk: privateKey
+  });
+
+  res.json({ signature : signature });
+  */
+});
+
+/**
+ * DIDを利用して署名検証するAPI
+ */
+app.post('/api/verify', async(req, res) => {
+  /*
+  const publicKey = JSON.parse(await fs.readFile('publicKey.json'))
+  verifiedJws = await ION.verifyJws({
+    jws: signature,
+    publicJwk: publicKey
+  })
+  console.log("Verify with my public key:", verifiedJws)
+
+  res.json({ verifiedJws : verifiedJws });
+  */
 });
 
 // 静的ファイルを自動的に返すようルーティングする。
