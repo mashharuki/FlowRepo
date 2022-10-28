@@ -560,6 +560,13 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 |1|userId|メールアドレスをハッシュ化したもの|string|
 |2|secretWord|DIDアクセスまでの合言葉|string|
 
+### デプロイしたコントラクトとアドレス情報
+
+|コントラクト名|アドレス|ブロックチェーン|
+|---|---|---|
+|IDQToken|0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9|Fuji|
+||||
+
 ### 参考文献
 
 1. [Developer Portal](https://developers.flow.com/)

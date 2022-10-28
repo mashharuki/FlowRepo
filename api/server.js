@@ -21,7 +21,7 @@ const portNo = 3001;
 // log4jsの設定
 log4js.configure('./log/log4js_setting.json');
 const logger = log4js.getLogger("server");
-const { ethers } = require('ethers');
+const { ethers, BigNumber } = require('ethers');
 
 // 起動
 app.listen(portNo, () => {
@@ -30,14 +30,20 @@ app.listen(portNo, () => {
 
 // 暗号化用のモジュールを読み込む
 const crypto = require('crypto');
+// did用のモジュールを読み込む
 const ION = require('@decentralized-identity/ion-tools')
 
 // create twilio object
+/*
 const accountSid = TWILIO_ACCOUNT_SID;
 const authToken = TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
+*/
+
 // ブロックチェーン機能のモジュールを読み込む
 const utils = require('./Utils');
+// ABI
+const abis = require('./contracts/ABI');
 
 // APIの定義
 
@@ -49,78 +55,7 @@ const utils = require('./Utils');
 
     // コントラクトのABI
     // const abi = req.query.abi;
-    const abi = `[
-        {
-          "inputs": [
-            {
-              "internalType": "string",
-              "name": "_greeting",
-              "type": "string"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "constructor"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "author",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "greeting",
-              "type": "string"
-            }
-          ],
-          "name": "SetGreeting",
-          "type": "event"
-        },
-        {
-          "inputs": [],
-          "name": "getGreeting",
-          "outputs": [
-            {
-              "internalType": "string",
-              "name": "",
-              "type": "string"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "greeting",
-          "outputs": [
-            {
-              "internalType": "string",
-              "name": "",
-              "type": "string"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "string",
-              "name": "newGreeting",
-              "type": "string"
-            }
-          ],
-          "name": "setGreeting",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        }
-      ]`
-    // コントラクトのアドレス
+    const abi = abis.GreetingABI;
     //const address = req.query.address;
     const address = '0x7B31aa8Df58697f1F8723372Fe1C1D1ba1050A6A';
     // メソッド名
@@ -155,78 +90,7 @@ const utils = require('./Utils');
  */
 app.get('/api/test2', async(req, res) => {
   // コントラクトのABI
-  const abi = `[
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "_greeting",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "author",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "string",
-          "name": "greeting",
-          "type": "string"
-        }
-      ],
-      "name": "SetGreeting",
-      "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "getGreeting",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "greeting",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "newGreeting",
-          "type": "string"
-        }
-      ],
-      "name": "setGreeting",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    }
-  ]`
-
+  const abi = abis.GreetingABI;
   // コントラクトのアドレス
   //const address = req.query.address;
   const address = '0x7B31aa8Df58697f1F8723372Fe1C1D1ba1050A6A';
@@ -246,6 +110,7 @@ app.get('/api/test2', async(req, res) => {
 /**
  * テスト用のAPI3
  */
+/*
 app.get('/api/test3', (req, res) => {
 
     // パスワードのハッシュ値を取得する。
@@ -261,6 +126,7 @@ app.get('/api/test3', (req, res) => {
     
     res.json({ result: "SMS success!!" });
 });
+*/
 
 /**
  * テスト用のAPI
@@ -352,6 +218,103 @@ app.get('/api/test4', async(req, res) => {
   logger.log("deactivateOperation:", deactivateOperation)
 
   res.json({ DID : response2 });
+});
+
+/**
+ * IDQTokenを発行するAPI
+ * @param to 発行先アドレス
+ * @param amount 発行量
+ */
+app.post('/api/mintIDQ', async(req, res) => {
+  logger.log("発行用のAPI開始");
+  // コントラクトのABI
+  const abi = abis.MyTokenABI;
+  // コントラクトのアドレス
+  const address = '0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9';
+  //const chainId = req.query.chainId;
+  const chainId = 43113;
+
+  // create wallet 
+  const wallet = new ethers.Wallet.fromMnemonic(MNEMONIC);
+  // create provider
+  const provider = new ethers.providers.JsonRpcProvider('https://api.avax-test.network/ext/bc/C/rpc');
+  // create contract 
+  var contract = new ethers.Contract(address, abi, await provider.getSigner(wallet.address));
+
+  // call send Tx function
+  var result = await utils.sendTx(logger, abi, address, "mint", ["0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", 1000], 'https://api.avax-test.network/ext/bc/C/rpc', chainId);
+
+  if(result == true) {
+      logger.debug("トランザクション送信成功");
+      logger.log("発行用のAPI終了");
+      res.json({ result: 'success' });
+  } else {
+      logger.error("トランザクション送信失敗");
+      logger.log("発行用のAPI終了");
+      res.json({ result: 'fail' });
+  }
+});
+
+/**
+ * IDQTokenを償却するAPI
+ * @param to 発行先アドレス
+ * @param amount 償却量
+ */
+app.post('/api/burnIDQ', async(req, res) => {
+  logger.log("償却用のAPI開始")
+  // コントラクトのABI
+  const abi = abis.MyTokenABI;
+  // コントラクトのアドレス
+  const address = '0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9';
+  //const chainId = req.query.chainId;
+  const chainId = 43113;
+  
+  // create wallet 
+  const wallet = new ethers.Wallet.fromMnemonic(MNEMONIC);
+  // create provider
+  const provider = new ethers.providers.JsonRpcProvider('https://api.avax-test.network/ext/bc/C/rpc');
+  // create contract 
+  var contract = new ethers.Contract(address, abi, await provider.getSigner(wallet.address));
+
+  // call send Tx function
+  var result = await utils.sendTx(logger, abi, address, "burnFrom", ["0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072", 1000], 'https://api.avax-test.network/ext/bc/C/rpc', chainId);
+
+  if(result == true) {
+      logger.debug("トランザクション送信成功");
+      logger.log("発行用のAPI終了");
+      res.json({ result: 'success' });
+  } else {
+      logger.error("トランザクション送信失敗");
+      logger.log("発行用のAPI終了");
+      res.json({ result: 'fail' });
+  }
+  logger.log("償却用のAPI終了")
+});
+
+/**
+ * IDQTokenの残高を取得するAPI
+ * @param addr 残高を取得するアドレス
+ */
+app.get('/api/balance/IDQ', async(req, res) => {
+  logger.log("残高取得用のAPI開始")
+  // コントラクトのABI
+  const abi = abis.MyTokenABI;
+  // コントラクトのアドレス
+  const address = '0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9';
+
+  // create wallet 
+  const wallet = new ethers.Wallet.fromMnemonic(MNEMONIC);
+  // create provider
+  const provider = new ethers.providers.JsonRpcProvider('https://api.avax-test.network/ext/bc/C/rpc');
+  // create contract 
+  var contract = new ethers.Contract(address, abi, await provider.getSigner(wallet.address));
+
+  console.log("contract:", contract);
+
+  const balance = await contract.callStatic.balanceOf(wallet.address);
+
+  logger.log("残高取得用のAPI終了");
+  res.json({ balance: balance });
 });
 
 /**
