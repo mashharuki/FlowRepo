@@ -636,3 +636,4 @@ Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブル
 63. [Tutorial: How to create a DID on the ION network](https://medium.com/@a.a.lechner/tutorial-how-to-create-a-did-on-the-ion-network-d4b8ebca280a)
 64. [DIF Universal Resolver](https://dev.uniresolver.io/)
 65. [ION Explorer](https://identity.foundation/ion/explorer/)
+66. [React で QR コード表示機能を実装](https://qiita.com/hujuu/items/b12ff32f189f5ab620ca)
