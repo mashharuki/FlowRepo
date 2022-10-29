@@ -1,15 +1,15 @@
-import logo from './assets/img/logo.svg';
-import './assets/css/App.css';
+import BloctoSDK from '@blocto/sdk';
 import { useEffect, useState } from "react";
 import Web3 from 'web3';
-import BloctoSDK from '@blocto/sdk';
 import Messenger from './assets/contracts/Messenger.json';
+import './assets/css/App.css';
+import logo from './assets/img/logo.svg';
 
 const {
   REACT_APP_MUNBAI_KEY
 } = process.env;
 
-// contract Address
+// contract Address (WalletFactoy)
 const CONTRACT_ADDRESS = "0xfFC2535688c5C053CF6E4C1B9452Fa14c092fe45";
 // chain ID 
 const chainId = '43113';

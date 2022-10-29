@@ -120,7 +120,7 @@ const Txs = (props) => {
             to: wallet,
             gas: '0x76c0', // 30400
             gasPrice: '0x9184e72a000', // 10000000000000
-            value:  value, 
+            value: value, 
             data: data,
         },];
         // 送信する

@@ -446,15 +446,15 @@ EOA ではなく、コントラクトウォレットをユーザーのウォレ�
 - 認証基盤連携  
   IAP 自身には、認証・認可機能がないので、別途 Azure AD や IDaaS などの認証基盤を用意し、IAM 連携で認証・認可を実施する。
 
-### Ceramic Networkとは
+### Ceramic Network とは
 
-Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデータネットワークプロトコルのこと。
+Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブルデータネットワークプロトコルのこと。
 
 ### Blocto Wallet App の仕組みを介してマルチシグウォレットにアクセスする場合
 
 [MultiSigDApp](https://blocto.app/link?url=https://multi-sig-wallet-contract.vercel.app&blockchains=mumbai)
 
-### QRコードでサイトインするイメージ
+### QR コードでサイトインするイメージ
 
 <img src="./docs/img/qr.png">
 
@@ -462,110 +462,112 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 
 [![](https://mermaid.ink/img/pako:eNqNlF1PE0EUhv_KZq8gwQu43AsSEyThQqORxJverO1UG9pp3W7TEELCzqiAlPARpQGLUFI-_AJjRbSt9Mec7m75F56Z3a27QIVeNDszz7xzznvOzIwazyaIqql58qJAaJyMpfRnhp6JUQV_ZspME2Vi7JHD6_bxFvB3wL8CbykDzsa37sGKu9m8KH0HawnY4oPxSeA7wOvAF8A6B-tw0BPRC2aWFjJPieGP42bWUIAfoBCwn_gfns8WaQDmdMNMxVM5nZpKfljR80oQgDyDHcmPxaswFWwkHnYKrIYf1wiPCPjuwwnBYEB8tRdQGEsKalyGOA2s7svyj8BOrpUtCv6Jnk4T8za4KfDJ7BShSj9cGqPcGR1VkhoaMQ-8LLxgtcvL5nXLYbslhYZqSriKnfPti10_c1yUzIimeIvSn3V7rQVW3Z5vgLXpgyM9EHhV-vcZ2B5WBfgXYL9xk7NVtlfO7NJGZIfMYQU4B3YGfN-eq4FV8s5yfmH_tLF_wGLAlrC73L1G99MyHorDiEokK6F4IqxjbVnsXeBrIgQx2RIRsfWLOavTrvZ15BYK9qt9-837cCjJngNJPZ0nyHTbby8bhOn2a4bOn4qzsOqU5t1aI6xYvGmLBxcD2F7Ydio7_o3EIKolsF5HgsDGwKsshVpSqO5uNpCLlnI4qLl7uup8qHSrR73ArlhGhenB3QJLlh6FWRNdU_6zJ3w3w31HQ93kL9_QebLZ_yWEqPuyZS__CFeIRs5FQmbtEQPBoAzWgT231GngEcf9jMcU3cNmt7nnbR7sk2J4ondopIdjVB1SM8TI6KkEPr4zQiimms9JhsRUDT8TujEVU2N0FrlCLqGb5F4ihY-PqskuG1LFq_p4msZVzTQKJID817tHEbnpvvfEy5d-9i-mqe40?type=png)](https://mermaid.live/edit#pako:eNqNlF1PE0EUhv_KZq8gwQu43AsSEyThQqORxJverO1UG9pp3W7TEELCzqiAlPARpQGLUFI-_AJjRbSt9Mec7m75F56Z3a27QIVeNDszz7xzznvOzIwazyaIqql58qJAaJyMpfRnhp6JUQV_ZspME2Vi7JHD6_bxFvB3wL8CbykDzsa37sGKu9m8KH0HawnY4oPxSeA7wOvAF8A6B-tw0BPRC2aWFjJPieGP42bWUIAfoBCwn_gfns8WaQDmdMNMxVM5nZpKfljR80oQgDyDHcmPxaswFWwkHnYKrIYf1wiPCPjuwwnBYEB8tRdQGEsKalyGOA2s7svyj8BOrpUtCv6Jnk4T8za4KfDJ7BShSj9cGqPcGR1VkhoaMQ-8LLxgtcvL5nXLYbslhYZqSriKnfPti10_c1yUzIimeIvSn3V7rQVW3Z5vgLXpgyM9EHhV-vcZ2B5WBfgXYL9xk7NVtlfO7NJGZIfMYQU4B3YGfN-eq4FV8s5yfmH_tLF_wGLAlrC73L1G99MyHorDiEokK6F4IqxjbVnsXeBrIgQx2RIRsfWLOavTrvZ15BYK9qt9-837cCjJngNJPZ0nyHTbby8bhOn2a4bOn4qzsOqU5t1aI6xYvGmLBxcD2F7Ydio7_o3EIKolsF5HgsDGwKsshVpSqO5uNpCLlnI4qLl7uup8qHSrR73ArlhGhenB3QJLlh6FWRNdU_6zJ3w3w31HQ93kL9_QebLZ_yWEqPuyZS__CFeIRs5FQmbtEQPBoAzWgT231GngEcf9jMcU3cNmt7nnbR7sk2J4ondopIdjVB1SM8TI6KkEPr4zQiimms9JhsRUDT8TujEVU2N0FrlCLqGb5F4ihY-PqskuG1LFq_p4msZVzTQKJID817tHEbnpvvfEy5d-9i-mqe40)
 
-## DIDの例
+## DID の例
 
 ```json
 {
   "@context": "https://www.w3.org/ns/did/v1",
   "id": "did:example:123456789abcdefghi",
-  "authentication": [{
-    // used to authenticate as did:...fghi
-    "id": "did:example:123456789abcdefghi#keys-1",
-    "type": "RsaVerificationKey2018",
-    "controller": "did:example:123456789abcdefghi",
-    "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
-  }],
-  "service": [{
-    // used to retrieve Verifiable Credentials associated with the DID
-    "id":"did:example:123456789abcdefghi#vcs",
-    "type": "VerifiableCredentialService",
-    "serviceEndpoint": "https://example.com/vc/"
-  }]
+  "authentication": [
+    {
+      // used to authenticate as did:...fghi
+      "id": "did:example:123456789abcdefghi#keys-1",
+      "type": "RsaVerificationKey2018",
+      "controller": "did:example:123456789abcdefghi",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n"
+    }
+  ],
+  "service": [
+    {
+      // used to retrieve Verifiable Credentials associated with the DID
+      "id": "did:example:123456789abcdefghi#vcs",
+      "type": "VerifiableCredentialService",
+      "serviceEndpoint": "https://example.com/vc/"
+    }
+  ]
 }
 ```
 
-### ION.jsで生成したDIDデータ
+### ION.js で生成した DID データ
 
 ```json
 {
-  "DID":
-    {
-      "@context":"https://w3id.org/did-resolution/v1",
-      "didDocument":      
+  "DID": {
+    "@context": "https://w3id.org/did-resolution/v1",
+    "didDocument": {
+      "id": "did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19",
+      "@context": [
+        "https://www.w3.org/ns/did/v1",
         {
-          "id":"did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19",
-          "@context":[
-            "https://www.w3.org/ns/did/v1",
-            {
-              "@base":"did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19"
-            }
-          ],
-          "service":[
-            {
-              "id":"#domain-1",
-              "type":"LinkedDomains",
-              "serviceEndpoint":"https://foo.example.com"
-            }
-          ],
-          "verificationMethod":
-          [
-            {
-              "id":"#key-1","controller":"did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19",
-              "type":"EcdsaSecp256k1VerificationKey2019",
-              "publicKeyJwk":
-                {
-                  "crv":"secp256k1",
-                  "kty":"EC",
-                  "x":"eE2tW65MdPAIrgREf3W98Np_Jxa5TnbBcD4CGEzXN6M","y":"ZrSWr5tHLhg7KeiyUdPI2bngpwq9HhtKNp3TnmR-ft4"
-                }
-              }
-            ],
-            "authentication":["#key-1"]
-          },
-          "didDocumentMetadata":
-          {
-            "method":{
-              "published":false,
-              "recoveryCommitment":"EiDyfSU5vetN10s5CYEH8CCNWPO7zTt-28tMfvmTmhOyoQ","updateCommitment":"EiChQ6DHQzvK3fJxqEHaMzaz1iXfDkb5K1RRqM9Ecea_LA"
-            },
-          "equivalentId":["did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg"]
+          "@base": "did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19"
+        }
+      ],
+      "service": [
+        {
+          "id": "#domain-1",
+          "type": "LinkedDomains",
+          "serviceEndpoint": "https://foo.example.com"
+        }
+      ],
+      "verificationMethod": [
+        {
+          "id": "#key-1",
+          "controller": "did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg:eyJkZWx0YSI6eyJwYXRjaGVzIjpbeyJhY3Rpb24iOiJyZXBsYWNlIiwiZG9jdW1lbnQiOnsicHVibGljS2V5cyI6W3siaWQiOiJrZXktMSIsInB1YmxpY0tleUp3ayI6eyJjcnYiOiJzZWNwMjU2azEiLCJrdHkiOiJFQyIsIngiOiJlRTJ0VzY1TWRQQUlyZ1JFZjNXOThOcF9KeGE1VG5iQmNENENHRXpYTjZNIiwieSI6IlpyU1dyNXRITGhnN0tlaXlVZFBJMmJuZ3B3cTlIaHRLTnAzVG5tUi1mdDQifSwicHVycG9zZXMiOlsiYXV0aGVudGljYXRpb24iXSwidHlwZSI6IkVjZHNhU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOSJ9XSwic2VydmljZXMiOlt7ImlkIjoiZG9tYWluLTEiLCJzZXJ2aWNlRW5kcG9pbnQiOiJodHRwczovL2Zvby5leGFtcGxlLmNvbSIsInR5cGUiOiJMaW5rZWREb21haW5zIn1dfX1dLCJ1cGRhdGVDb21taXRtZW50IjoiRWlDaFE2REhRenZLM2ZKeHFFSGFNemF6MWlYZkRrYjVLMVJScU05RWNlYV9MQSJ9LCJzdWZmaXhEYXRhIjp7ImRlbHRhSGFzaCI6IkVpQkVpck1RMVhkSmcxM2U4WkVRdV9LeWRmS2M3akY3dGtiZVc0dHhudnhBS1EiLCJyZWNvdmVyeUNvbW1pdG1lbnQiOiJFaUR5ZlNVNXZldE4xMHM1Q1lFSDhDQ05XUE83elR0LTI4dE1mdm1UbWhPeW9RIn19",
+          "type": "EcdsaSecp256k1VerificationKey2019",
+          "publicKeyJwk": {
+            "crv": "secp256k1",
+            "kty": "EC",
+            "x": "eE2tW65MdPAIrgREf3W98Np_Jxa5TnbBcD4CGEzXN6M",
+            "y": "ZrSWr5tHLhg7KeiyUdPI2bngpwq9HhtKNp3TnmR-ft4"
           }
         }
+      ],
+      "authentication": ["#key-1"]
+    },
+    "didDocumentMetadata": {
+      "method": {
+        "published": false,
+        "recoveryCommitment": "EiDyfSU5vetN10s5CYEH8CCNWPO7zTt-28tMfvmTmhOyoQ",
+        "updateCommitment": "EiChQ6DHQzvK3fJxqEHaMzaz1iXfDkb5K1RRqM9Ecea_LA"
+      },
+      "equivalentId": ["did:ion:EiBd9gVQzVFqa9LaqAzjG-A-t4GwMBoC6gY1owiB_lF2Tg"]
+    }
+  }
 }
 ```
 
-## 東京Web3ハッカソンで開発予定の機能一覧
+## 東京 Web3 ハッカソンで開発予定の機能一覧
 
-| 機能名                 | 説明                                                                                                     |
-| ---------------------- | -------------------------------------------------------------------------------------------------------- |
-| 登録 機能    | メールアドレスをキーとしてコントラクトに登録する。                                 |
-| Reward機能     | IDQTokenをrewardとして受け取れる機能 |
-| IDQトークンburn機能 | 機能を利用するためにburnする機能                                                                     |
-| Factory機能   | ユーザー用のコントラクトウォレットを生成する機能                                                   |
-| ワンタイム認証機能   | ワンタイムパスワードにより認証を行う機能                                                     |
-| 他コントラクト呼び出し機能     | 他のコントラクトの機能を呼び出す機能                                                           |
+| 機能名                     | 説明                                               |
+| -------------------------- | -------------------------------------------------- |
+| 登録 機能                  | メールアドレスをキーとしてコントラクトに登録する。 |
+| Reward 機能                | IDQToken を reward として受け取れる機能            |
+| IDQ トークン burn 機能     | 機能を利用するために burn する機能                 |
+| Factory 機能               | ユーザー用のコントラクトウォレットを生成する機能   |
+| ワンタイム認証機能         | ワンタイムパスワードにより認証を行う機能           |
+| 他コントラクト呼び出し機能 | 他のコントラクトの機能を呼び出す機能               |
 
-### WalletContract V3で管理する変数
+### WalletContract V3 で管理する変数
 
-|No.|変数名|概要|型|
-|---|---|---|---|
-|1|userId|メールアドレスをハッシュ化したもの|string|
-|2|walletMap|userIdと紐づくウォレットアドレス|mapping|
-|3|isRegistered|メールアドレスが既に登録済みかであるかチェックするmap|mapping|
+| No. | 変数名       | 概要                                                   | 型      |
+| --- | ------------ | ------------------------------------------------------ | ------- |
+| 1   | userId       | メールアドレスをハッシュ化したもの                     | string  |
+| 2   | walletMap    | userId と紐づくウォレットアドレス                      | mapping |
+| 3   | isRegistered | メールアドレスが既に登録済みかであるかチェックする map | mapping |
 
-### CoreWallet V3で管理する変数
+### CoreWallet V3 で管理する変数
 
-|No.|変数名|概要|型|
-|---|---|---|---|
-|1|userId|メールアドレスをハッシュ化したもの|string|
-|2|secretWord|DIDアクセスまでの合言葉|string|
+| No. | 変数名     | 概要                               | 型     |
+| --- | ---------- | ---------------------------------- | ------ |
+| 1   | userId     | メールアドレスをハッシュ化したもの | string |
+| 2   | secretWord | DID アクセスまでの合言葉           | string |
 
 ### デプロイしたコントラクトとアドレス情報
 
-|コントラクト名|アドレス|ブロックチェーン|
-|---|---|---|
-|IDQToken|0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9|Fuji|
-||||
+| コントラクト名  | アドレス                                   | ブロックチェーン |
+| --------------- | ------------------------------------------ | ---------------- |
+| IDQToken        | 0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9 | Fuji             |
+| WalletFactoryV4 | 0xacff3BF500e0E9F7734D39064B290873d80Fe749 | Fuji             |
 
 ### 参考文献
 
@@ -613,23 +615,23 @@ Ceramic Networkは3Box Labが開発する、分散型のコンポーザブルデ
 42. [Twilio(トゥイリオ) の Quick Start (SMS)](https://www.twilio.com/ja/docs/verify/quickstarts/node-express#)
 43. [Iroha React App](https://github.com/mashharuki/iroha)
 44. [Ethers Docs](https://docs.ethers.io/v5/api/)
-45. [ethers.jsとは(ethers.jsの基本概念や特徴の解説)](https://zenn.dev/nft/books/410be300912936/viewer/00c605)
+45. [ethers.js とは(ethers.js の基本概念や特徴の解説)](https://zenn.dev/nft/books/410be300912936/viewer/00c605)
 46. [JavaScript の Import Assertions について](https://sosukesuzuki.dev/posts/import-assertions/)
 47. [tutorials(send-token-etherjs)](https://ethereum.org/en/developers/tutorials/send-token-etherjs/)
 48. [Simple Code(send Tx)](https://ethereum.stackexchange.com/questions/80867/sample-code-in-ethers-js-to-send-raw-transaction-and-to-sign-transaction)
 49. [How to Mint an NFT from Code](https://docs.alchemy.com/docs/how-to-mint-an-nft-from-code)
-50. [0x2CcfA2AcF6FF744575cCf306B44A59B11C32e44Bのコントラクト](https://etherscan.io/bytecode-decompiler?a=0x2ccfa2acf6ff744575ccf306b44a59b11c32e44b)
+50. [0x2CcfA2AcF6FF744575cCf306B44A59B11C32e44B のコントラクト](https://etherscan.io/bytecode-decompiler?a=0x2ccfa2acf6ff744575ccf306b44a59b11c32e44b)
 51. [Avalanche Docs](https://docs.avax.network/)
 52. [hardhat Docs](https://hardhat.org/hardhat-runner/docs/guides/project-setup)
 53. [Web3js 公式サイト](https://web3js.org/)
 54. [Signing Raw Transactions](https://docs.etherscan.io/tutorials/signing-raw-transactions)
-55. [ethers.jsを使ってMetaMaskで署名してNode.jsで検証する方法](https://zenn.dev/tatsuyasusukida/articles/how-to-sign-and-verify-ethersjs)
+55. [ethers.js を使って MetaMask で署名して Node.js で検証する方法](https://zenn.dev/tatsuyasusukida/articles/how-to-sign-and-verify-ethersjs)
 56. [Twilio(トゥイリオ) Verify API](https://www.twilio.com/docs/verify/api)
-57. [Web3.0とDIDとは](https://lastrust.io/2020/06/05/whatis-did-web3/)
+57. [Web3.0 と DID とは](https://lastrust.io/2020/06/05/whatis-did-web3/)
 58. [uPort: DID(Decentralized Identity)におけるユーザ認証について](https://qiita.com/tomohata/items/e720ec4408d1db24cee2)
 59. [ceramic.network](https://ceramic.network/)
-60. [Ceramic Networkとは？](https://mirror.xyz/kantaro.eth/v3z1YU1eNSCxwNfsynxRF_ef1RTBvQWFc9KCZaiWCsk)
-61. [「ION」Microsoftが主導する分散型デジタルIDシステム](https://gaiax-blockchain.com/microsoft-ion)
+60. [Ceramic Network とは？](https://mirror.xyz/kantaro.eth/v3z1YU1eNSCxwNfsynxRF_ef1RTBvQWFc9KCZaiWCsk)
+61. [「ION」Microsoft が主導する分散型デジタル ID システム](https://gaiax-blockchain.com/microsoft-ion)
 62. [ION tools](https://github.com/decentralized-identity/ion-tools)
 63. [Tutorial: How to create a DID on the ION network](https://medium.com/@a.a.lechner/tutorial-how-to-create-a-did-on-the-ion-network-d4b8ebca280a)
 64. [DIF Universal Resolver](https://dev.uniresolver.io/)

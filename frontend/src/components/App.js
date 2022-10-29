@@ -13,12 +13,14 @@ import './../assets/css/App.css';
 import NoPage from './common/NoPage';
 import Web3Menu from "./common/Web3Menu";
 import Create from './pages/Create';
-import Wallets from './pages/Wallets';
-import Txs from './pages/Txs';
 import Home from './pages/Home';
+import Txs from './pages/Txs';
+import Wallets from './pages/Wallets';
 
-// contract Address
-const CONTRACT_ADDRESS = "0x2B5914De5D5166eBaa423C92BAb8518c85EAA0cb";
+// contract Address (WalletFactory)
+const CONTRACT_ADDRESS = "0xacff3BF500e0E9F7734D39064B290873d80Fe749";
+// contract Address (MyToken)
+const MYTOKEN_ADDRESS = "0x5B907Bd1b59760169a0946bD0A9044fF3E15c3e9";
 // chain ID 
 const chainId = '43113';
 // rpc URL 
@@ -95,8 +97,8 @@ function App() {
           ) : (
             /* ルーティングに従い、各ページのコンポーネントを描画する。 */ 
             <Routes>
-              <Route path="/" exact element={ <Home CONTRACT_ADDRESS={CONTRACT_ADDRESS} RPC_URL={RPC_URL} provider={web3} signer={currentAccount} /> } />
-              <Route path="/home" exact element={ <Home CONTRACT_ADDRESS={CONTRACT_ADDRESS} RPC_URL={RPC_URL} provider={web3} signer={currentAccount} /> } />
+              <Route path="/" exact element={ <Home CONTRACT_ADDRESS={CONTRACT_ADDRESS} MYTOKEN_ADDRESS={MYTOKEN_ADDRESS} RPC_URL={RPC_URL} blocto={blocto} provider={web3} signer={currentAccount} /> } />
+              <Route path="/home" exact element={ <Home CONTRACT_ADDRESS={CONTRACT_ADDRESS} MYTOKEN_ADDRESS={MYTOKEN_ADDRESS} RPC_URL={RPC_URL} blocto={blocto} provider={web3} signer={currentAccount} /> } />
               <Route path="/wallets" exact element={ <Wallets CONTRACT_ADDRESS={CONTRACT_ADDRESS} provider={web3} blocto={blocto} signer={currentAccount} /> } />
               <Route path="/create" exact element={ <Create CONTRACT_ADDRESS={CONTRACT_ADDRESS} provider={web3} blocto={blocto} signer={currentAccount} /> } />
               <Route path="/txs" exact element={ <Txs provider={web3} blocto={blocto} signer={currentAccount} /> } />

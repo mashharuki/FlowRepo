@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.9;
+pragma solidity >=0.8.0;
 
-import './MultiSigWallet.sol';
+import "./MultiSigWallet.sol";
 
 /**
  * WalletFactoryコントラクト
  */
 contract WalletFactoryV4 {
-
     // MultiSigWallet型の配列
     MultiSigWallet[] public wallets;
     // 関数から返すことのできる最大値
@@ -18,13 +17,18 @@ contract WalletFactoryV4 {
     mapping(address => string) public dids;
 
     // event
-    event WalletCreated (MultiSigWallet indexed wallet, string name, address[] owners, uint required);
+    event WalletCreated(
+        MultiSigWallet indexed wallet,
+        string name,
+        address[] owners,
+        uint256 required
+    );
     event Registered(address addr, string did);
 
     /**
      * MultiSigWalletのインスタンス数を取得する関数
      */
-    function walletsCount () public view returns (uint256) {
+    function walletsCount() public view returns (uint256) {
         return wallets.length;
     }
 
@@ -34,10 +38,10 @@ contract WalletFactoryV4 {
      * @param _owners アドレスの配列
      * @param _required 閾値
      */
-    function createWallet (
-        string memory _name, 
-        address[] memory _owners, 
-        uint _required
+    function createWallet(
+        string memory _name,
+        address[] memory _owners,
+        uint256 _required
     ) public {
         // インスタンスを生成
         MultiSigWallet wallet = new MultiSigWallet(_name, _owners, _required);
@@ -50,9 +54,12 @@ contract WalletFactoryV4 {
     /**
      * 作成済みウォレットの情報を取得するメソッド
      */
-    function getWallets(uint256 limit, uint256 offset) public view returns (MultiSigWallet[] memory coll) {
-        
-        require (offset <= walletsCount(), "offset out of bounds");
+    function getWallets(uint256 limit, uint256 offset)
+        public
+        view
+        returns (MultiSigWallet[] memory coll)
+    {
+        require(offset <= walletsCount(), "offset out of bounds");
         // 最大値を上回っている場合は、limitを格納する。
         uint256 size = walletsCount() - offset;
         size = size < limit ? size : limit;
@@ -64,7 +71,7 @@ contract WalletFactoryV4 {
             coll[i] = wallets[offset + i];
         }
 
-        return coll;    
+        return coll;
     }
 
     /**
@@ -73,9 +80,12 @@ contract WalletFactoryV4 {
      */
     function register(string memory _did) public {
         // check
-        require(!isRegistered[msg.sender], "This address is already registered!!");
+        require(
+            !isRegistered[msg.sender],
+            "This address is already registered!!"
+        );
 
-        // set 
+        // set
         isRegistered[msg.sender] = true;
         dids[msg.sender] = _did;
 

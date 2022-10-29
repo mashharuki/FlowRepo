@@ -12,7 +12,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
-import FactoryContract from "../../contracts/WalletFactory.json";
+import FactoryContract from "../../contracts/WalletFactoryV4.json";
 import WalletDialog from '../common/Dialog';
 import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
 import './../../assets/css/App.css';

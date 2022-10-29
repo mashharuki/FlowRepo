@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import React, { useEffect, useState } from "react";
-import FactoryContract from "../../contracts/WalletFactory.json";
+import FactoryContract from "../../contracts/WalletFactoryV4.json";
 import ActionButton from '../common/ActionButton';
 import LoadingIndicator from '../common/LoadingIndicator/LoadingIndicator';
 import './../../assets/css/App.css';

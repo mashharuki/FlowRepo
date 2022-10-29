@@ -19,12 +19,12 @@
     "deploy:op": "npx truffle migrate --network op",
     "deploy:arbitrum": "npx truffle migrate --network arbitrum",
     "deploy:aurora": "npx truffle migrate --network aurora",
-    "verify:goreli": "npx truffle run verify Migrations --network goreli",
-    "verify:mumbai": "npx truffle run verify Migrations --network mumbai",
-    "verify:bsctest": "npx truffle run verify Migrations --network bsctest",
-    "verify:fuji": "npx truffle run verify Migrations --network fuji",
-    "verify:ftm": "npx truffle run verify Migrations --network ftm",
-    "verify:aurora": "npx truffle run verify Migrations --network aurora"
+    "verify:goreli": "npx truffle run verify WalletFactoryV4 --network goreli",
+    "verify:mumbai": "npx truffle run verify WalletFactoryV4 --network mumbai",
+    "verify:bsctest": "npx truffle run verify WalletFactoryV4 --network bsctest",
+    "verify:fuji": "npx truffle run verify WalletFactoryV4 --network fuji",
+    "verify:ftm": "npx truffle run verify WalletFactoryV4 --network ftm",
+    "verify:aurora": "npx truffle run verify WalletFactoryV4 --network aurora"
   },
   "keywords": [],
   "author": "mashharuki",

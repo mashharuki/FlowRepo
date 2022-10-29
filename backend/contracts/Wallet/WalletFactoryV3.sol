@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.9;
+pragma solidity >=0.8.0;
 
 import "./CoreWallet.sol";
 import "./../Token/MyToken.sol";
@@ -20,11 +20,11 @@ contract WalletFactoryV3 {
     event Create(string _userId, address wAddress);
 
     /**
-     * create Core Wallet 
+     * create Core Wallet
      * @param _userId userID
      */
     function createCoreWallet(string memory _userId) public {
-        // check 
+        // check
         require(!isRegistered[_userId], "this userID is already registered.");
         // create wallet
         CoreWallet wallet = new CoreWallet(_userId);

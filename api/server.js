@@ -217,6 +217,7 @@ app.get('/api/test4', async(req, res) => {
 
   logger.log("deactivateOperation:", deactivateOperation)
 
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   res.json({ DID : response2 });
 });
 
@@ -247,10 +248,12 @@ app.post('/api/mintIDQ', async(req, res) => {
   if(result == true) {
       logger.debug("トランザクション送信成功");
       logger.log("発行用のAPI終了");
+      res.set({ 'Access-Control-Allow-Origin': '*' });
       res.json({ result: 'success' });
   } else {
       logger.error("トランザクション送信失敗");
       logger.log("発行用のAPI終了");
+      res.set({ 'Access-Control-Allow-Origin': '*' });
       res.json({ result: 'fail' });
   }
 });
@@ -281,14 +284,15 @@ app.post('/api/burnIDQ', async(req, res) => {
 
   if(result == true) {
       logger.debug("トランザクション送信成功");
-      logger.log("発行用のAPI終了");
+      logger.log("償却用のAPI終了")
+      res.set({ 'Access-Control-Allow-Origin': '*' });
       res.json({ result: 'success' });
   } else {
       logger.error("トランザクション送信失敗");
-      logger.log("発行用のAPI終了");
+      logger.log("償却用のAPI終了")
+      res.set({ 'Access-Control-Allow-Origin': '*' });
       res.json({ result: 'fail' });
   }
-  logger.log("償却用のAPI終了")
 });
 
 /**
@@ -314,13 +318,14 @@ app.get('/api/balance/IDQ', async(req, res) => {
   const balance = await contract.callStatic.balanceOf(wallet.address);
 
   logger.log("残高取得用のAPI終了");
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   res.json({ balance: balance });
 });
 
 /**
  * DIDを作成するAPI
  */
-app.get('/api/create', async(req, res) => {
+app.post('/api/create', async(req, res) => {
   let authnKeys = await ION.generateKeyPair();
   let did = new ION.DID({
     content: {
@@ -347,6 +352,7 @@ app.get('/api/create', async(req, res) => {
   let response = await request.submit();
   logger.log("response:", response)
 
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   res.json({ DID : await did.getURI() });
 });
 
@@ -360,6 +366,7 @@ app.get('/api/resolve', async(req, res) => {
   const response = await ION.resolve(uri);
   logger.log("response:", response);
 
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   res.json({ result : response });
 });
 

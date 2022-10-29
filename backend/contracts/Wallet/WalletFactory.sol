@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.9;
+pragma solidity >=0.8.0;
 
-import './MultiSigWallet.sol';
+import "./MultiSigWallet.sol";
 
 /**
  * WalletFactoryコントラクト
@@ -13,12 +13,17 @@ contract WalletFactory {
     uint256 constant maxLimit = 20;
 
     // インスタンスが生成された時のイベント
-    event WalletCreated (MultiSigWallet indexed wallet, string name, address[] owners, uint required);
+    event WalletCreated(
+        MultiSigWallet indexed wallet,
+        string name,
+        address[] owners,
+        uint256 required
+    );
 
     /**
      * MultiSigWalletのインスタンス数を取得する関数
      */
-    function walletsCount () public view returns (uint256) {
+    function walletsCount() public view returns (uint256) {
         return wallets.length;
     }
 
@@ -28,10 +33,10 @@ contract WalletFactory {
      * @param _owners アドレスの配列
      * @param _required 閾値
      */
-    function createWallet (
-        string memory _name, 
-        address[] memory _owners, 
-        uint _required
+    function createWallet(
+        string memory _name,
+        address[] memory _owners,
+        uint256 _required
     ) public {
         // インスタンスを生成
         MultiSigWallet wallet = new MultiSigWallet(_name, _owners, _required);
@@ -44,9 +49,12 @@ contract WalletFactory {
     /**
      * 作成済みウォレットの情報を取得するメソッド
      */
-    function getWallets(uint256 limit, uint256 offset) public view returns (MultiSigWallet[] memory coll) {
-        
-        require (offset <= walletsCount(), "offset out of bounds");
+    function getWallets(uint256 limit, uint256 offset)
+        public
+        view
+        returns (MultiSigWallet[] memory coll)
+    {
+        require(offset <= walletsCount(), "offset out of bounds");
         // 最大値を上回っている場合は、limitを格納する。
         uint256 size = walletsCount() - offset;
         size = size < limit ? size : limit;
@@ -58,7 +66,7 @@ contract WalletFactory {
             coll[i] = wallets[offset + i];
         }
 
-        return coll;    
+        return coll;
     }
 
     /**
@@ -66,4 +74,3 @@ contract WalletFactory {
      */
     receive() external payable {}
 }
-
