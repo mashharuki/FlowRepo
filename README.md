@@ -637,3 +637,5 @@ Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブル
 64. [DIF Universal Resolver](https://dev.uniresolver.io/)
 65. [ION Explorer](https://identity.foundation/ion/explorer/)
 66. [React で QR コード表示機能を実装](https://qiita.com/hujuu/items/b12ff32f189f5ab620ca)
+67. [IDQ Sample UI/UX](https://www.figma.com/file/DRxycjw75Ei4jK7TYYQUXk/IDQ-Sample-UI%2FUX?node-id=0%3A1)
+68. [IDQ UI | Sample](https://docs.google.com/presentation/d/12-VecOnDpVtiWjOL90aRxCguQ6vk2uhpWSa7zYZMO-c/edit#slide=id.p)
