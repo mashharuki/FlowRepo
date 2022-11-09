@@ -639,3 +639,5 @@ Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブル
 66. [React で QR コード表示機能を実装](https://qiita.com/hujuu/items/b12ff32f189f5ab620ca)
 67. [IDQ Sample UI/UX](https://www.figma.com/file/DRxycjw75Ei4jK7TYYQUXk/IDQ-Sample-UI%2FUX?node-id=0%3A1)
 68. [IDQ UI | Sample](https://docs.google.com/presentation/d/12-VecOnDpVtiWjOL90aRxCguQ6vk2uhpWSa7zYZMO-c/edit#slide=id.p)
+69. [EMERALD ACADEMY](https://academy.ecdao.org/bootcamps/6)
+70. [QuickStart Tutorial](https://developers.flow.com/tools/fcl-js/tutorials/flow-app-quickstart)
