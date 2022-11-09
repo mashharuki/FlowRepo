@@ -641,3 +641,4 @@ Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブル
 68. [IDQ UI | Sample](https://docs.google.com/presentation/d/12-VecOnDpVtiWjOL90aRxCguQ6vk2uhpWSa7zYZMO-c/edit#slide=id.p)
 69. [EMERALD ACADEMY](https://academy.ecdao.org/bootcamps/6)
 70. [QuickStart Tutorial](https://developers.flow.com/tools/fcl-js/tutorials/flow-app-quickstart)
+71. [flowScan (0xba1132bc08f82fe2)](https://testnet.flowscan.org/account/0xba1132bc08f82fe2/transactions)

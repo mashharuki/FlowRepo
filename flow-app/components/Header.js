@@ -9,7 +9,7 @@ export default function Header() {
         <Head>
             <title>FCL Quickstart with NextJS</title>
             <meta name="description" content="My first web3 app on Flow!" />
-            <link rel="icon" href="/favicon.png" />
+            <link rel="icon" href="vercel.svg" />
         </Head>
     );
 }
