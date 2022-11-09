@@ -8,6 +8,7 @@ import { ROUTES } from './config/routes.config';
 
 import './index.css';
 import './components/Atoms.css'
+import "./config/config";
 
 ReactDOM.render(
   <Providers>
