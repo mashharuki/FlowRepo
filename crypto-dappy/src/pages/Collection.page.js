@@ -3,7 +3,10 @@ import DappyList from '../components/DappyList'
 import Header from '../components/Header'
 import { useUser } from '../providers/UserProvider'
 
-
+/**
+ * Collection
+ * @returns 
+ */
 export default function Collection() {
   const { collection, createCollection, deleteCollection, userDappies } = useUser()
 
