@@ -648,3 +648,7 @@ Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブル
 71. [flowScan (0xba1132bc08f82fe2)](https://testnet.flowscan.org/account/0xba1132bc08f82fe2/transactions)
 72. [CryptoDappy](https://www.cryptodappy.com/)
 73. [Flow Smart Contract Examples](https://cookbook.onflow.org/)
+74. [thirdweb の使い方 - 独自コントラクトの作成と「NFT の MINT サイト」の作り方を紹介](https://hanzochang.com/articles/10#install)
+75. [navra の figma](https://www.figma.com/proto/8YqMWlJ3krgnhhh4OzXdRe/navra.fish?page-id=13%3A9&node-id=795%3A11988&viewport=-7234%2C-2636%2C0.28&scaling=scale-down&starting-point-node-id=795%3A11988&show-proto-sidebar=1)
+76. [Web3Auth](https://web3auth.io/)
+77. [Weave DB](https://weavedb.asteroid.ac/)
