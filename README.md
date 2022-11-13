@@ -654,3 +654,5 @@ Ceramic Network は 3Box Lab が開発する、分散型のコンポーザブル
 77. [Weave DB](https://weavedb.asteroid.ac/)
 78. [FlowToken.cdc](https://github.com/onflow/flow-core-contracts/blob/master/contracts/FlowToken.cdc)
 79. [Flow Token Standard](https://github.com/onflow/flow-ft)
+80. [nft-storefront](https://github.com/onflow/nft-storefront)
+81. [Cadence Voting Tutorial](https://play.flow.com/d120f0a7-d411-4243-bc59-5125a84f99b3)
